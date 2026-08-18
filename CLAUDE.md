@@ -47,6 +47,17 @@ components.
   else**: not errors, not unsigned, not delete. Amber is the caution tone.
 - Three faces: Bricolage Grotesque (display), Inter Tight (UI), IBM Plex
   Mono (anything scanned rather than read: timecodes, doses, IDs).
+- The `next/font` variables live on `<html>`, not `<body>`. The tokens are
+  declared at `:root` and reference them, and a custom property is
+  substituted on the element it is declared on: defined only on `<body>`,
+  `--font-display` resolves to the guaranteed-invalid value at `:root` and
+  every utility built on it silently falls back to system sans.
+- Bricolage carries an optical-size axis, so it is requested with
+  `axes: ["opsz"]` and left on `font-optical-sizing: auto`, as the kit does.
+- Lockups scale from ratios taken off the kit (`src/components/brand/logo.tsx`):
+  horizontal, stacked, and the expressive one where the mark replaces the
+  "o". The expressive lockup is campaign-only and is the single place
+  signal red appears outside a recording state.
 - Sentence case everywhere. Body text never below 16px. Tabular figures
   globally. Visible focus ring in sea, 2.5px at 2px offset.
 - Voice: say the thing, then stop. Use draft / review / sign. Never

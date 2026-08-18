@@ -2,7 +2,12 @@
 
 import { useState } from "react";
 import Link from "next/link";
-import { ExpressiveLockup, Lockup, Mark } from "@/components/brand/logo";
+import {
+  ExpressiveLockup,
+  Lockup,
+  Mark,
+  StackedLockup,
+} from "@/components/brand/logo";
 import { Button } from "@/components/ui/button";
 import { FlagChip, Pill, SpeakerTag, Tag, type PillTone } from "@/components/ui/badge";
 import { Panel, PanelHeader, PanelBody, Card } from "@/components/ui/panel";
@@ -111,12 +116,15 @@ export default function DesignSystemPage() {
             </Tile>
           </div>
 
-          <div className="grid sm:grid-cols-2 gap-4 mt-4">
-            <Tile caption="Horizontal lockup · app headers, signatures">
-              <Lockup markSize={40} textSize={38} />
+          <div className="grid sm:grid-cols-3 gap-4 mt-4">
+            <Tile caption="Horizontal lockup · app headers, signatures. Min 96px wide">
+              <Lockup markSize={34} textSize={30} />
             </Tile>
-            <Tile caption="Expressive lockup · campaign only, never in product" dark>
-              <ExpressiveLockup size={38} markClass="text-sea" textClass="text-chalk" />
+            <Tile caption="Stacked lockup · splash, print, standee. Min 72px wide" dark>
+              <StackedLockup textSize={26} />
+            </Tile>
+            <Tile caption="Expressive lockup · campaign only, never in product">
+              <ExpressiveLockup size={34} />
             </Tile>
           </div>
 
