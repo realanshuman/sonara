@@ -1,0 +1,300 @@
+@import "tailwindcss";
+
+/* ═══════════════════════════════════════════════════════════════
+   Sonara design tokens — derived from the brand kit (v1, Aug 2026)
+
+   Palette rules that matter:
+   · Petrol carries the brand. Buttons, the mark, primary actions.
+   · Signal red has exactly one job: something is being recorded.
+     Never use it for buttons, links, or errors.
+   · Amber is the working/caution tone (jobs running, consent box).
+   · Everything a doctor scans rather than reads is set in mono.
+   ═══════════════════════════════════════════════════════════════ */
+
+@theme inline {
+  /* brand palette */
+  --color-ink: #0b2422;
+  --color-petrol: #12514b;
+  --color-petrol-deep: #0d423d;
+  --color-sea: #2f8c7f;
+  --color-mist: #c9dbd5;
+  --color-paper: #f1f4f1;
+  --color-chalk: #ffffff;
+  --color-line: #d5deda;
+  --color-muted: #5e736e;
+  --color-signal: #d8452f;
+  --color-signal-deep: #c13b26;
+  --color-amber: #b7801e;
+
+  /* dark-surface steps (rail, hero, bands) */
+  --color-ink-2: #12312e;
+  --color-ink-3: #1e4340;
+  --color-ink-text: #dce7e4;
+  --color-ink-muted: #8fa8a3;
+  --color-ink-faint: #6e8c87;
+
+  /* functional tints — fills behind small text */
+  --color-tint-petrol: #e0ede9;
+  --color-tint-sea: #eaf3f0;
+  --color-tint-mist: #e7eeeb;
+  --color-tint-signal: #fbe2de;
+  --color-tint-amber: #fbf4e8;
+  --color-tint-amber-line: #ebdcc0;
+  --color-tint-sand: #edeae2;
+  --color-sand-text: #6b6250;
+  --color-amber-text: #8a6412;
+  --color-soft: #f7faf8;
+  --color-faint: #9aaca7;
+
+  /* type */
+  --font-display: var(--font-bricolage), ui-sans-serif, system-ui, sans-serif;
+  --font-body: var(--font-inter-tight), ui-sans-serif, system-ui, sans-serif;
+  --font-mono: var(--font-plex-mono), ui-monospace, "SFMono-Regular", monospace;
+
+  /* radii */
+  --radius-card: 14px;
+  --radius-panel: 13px;
+  --radius-field: 9px;
+  --radius-chip: 6px;
+
+  /* shadows — one soft lift, used sparingly */
+  --shadow-lift: 0 1px 2px rgba(11, 36, 34, 0.04), 0 18px 44px -28px rgba(11, 36, 34, 0.3);
+  --shadow-pop: 0 4px 10px rgba(11, 36, 34, 0.06), 0 24px 60px -24px rgba(11, 36, 34, 0.35);
+}
+
+/* ── base ─────────────────────────────────────────────────────── */
+
+* {
+  border-color: var(--color-line);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--color-paper);
+  color: var(--color-ink);
+  font-family: var(--font-body);
+  font-size: 16px;
+  line-height: 1.55;
+  -webkit-font-smoothing: antialiased;
+  font-variant-numeric: tabular-nums; /* brand rule: numbers never jiggle */
+}
+
+::selection {
+  background: var(--color-mist);
+  color: var(--color-ink);
+}
+
+:focus-visible {
+  outline: 2.5px solid var(--color-sea);
+  outline-offset: 2px;
+  border-radius: 5px;
+}
+
+button {
+  cursor: pointer;
+}
+button:disabled {
+  cursor: not-allowed;
+}
+
+/* thin scrollbars inside app panes */
+[data-scroll] {
+  scrollbar-width: thin;
+  scrollbar-color: var(--color-line) transparent;
+}
+[data-scroll]::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+[data-scroll]::-webkit-scrollbar-thumb {
+  background: var(--color-line);
+  border-radius: 4px;
+}
+
+/* ── typographic voices ──────────────────────────────────────────
+   The scale is deliberately gapped: nothing between 18 and 26.  */
+
+@utility t-hero {
+  font-family: var(--font-display);
+  font-weight: 800;
+  letter-spacing: -0.038em;
+  line-height: 0.98;
+  font-size: clamp(40px, 6.4vw, 76px);
+}
+@utility t-display {
+  font-family: var(--font-display);
+  font-weight: 800;
+  letter-spacing: -0.03em;
+  line-height: 1.05;
+  font-size: clamp(28px, 4vw, 44px);
+}
+@utility t-h2 {
+  font-family: var(--font-display);
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  line-height: 1.15;
+  font-size: 26px;
+}
+@utility t-h3 {
+  font-family: var(--font-display);
+  font-weight: 600;
+  letter-spacing: -0.015em;
+  line-height: 1.2;
+  font-size: 19px;
+}
+@utility t-panel {
+  font-family: var(--font-display);
+  font-weight: 600;
+  letter-spacing: -0.015em;
+  font-size: 16px;
+}
+@utility t-eyebrow {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--color-muted);
+  font-weight: 500;
+}
+@utility t-label {
+  font-family: var(--font-mono);
+  font-size: 10.5px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--color-muted);
+  font-weight: 500;
+}
+@utility t-mono {
+  font-family: var(--font-mono);
+  font-size: 12px;
+}
+@utility t-mono-sm {
+  font-family: var(--font-mono);
+  font-size: 11px;
+}
+@utility wordmark {
+  font-family: var(--font-display);
+  font-weight: 800;
+  letter-spacing: -0.045em;
+  line-height: 1;
+}
+
+/* ── motion ───────────────────────────────────────────────────── */
+
+@keyframes rec-pulse {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.28;
+  }
+}
+@keyframes tick-blink {
+  50% {
+    opacity: 0.3;
+  }
+}
+@keyframes rise-in {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+@keyframes trace-draw {
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+.anim-rise {
+  animation: rise-in 0.45s cubic-bezier(0.2, 0.7, 0.2, 1) both;
+}
+.anim-fade {
+  animation: fade-in 0.4s ease both;
+}
+
+/* scroll-reveal hooks used by the landing page */
+[data-reveal] {
+  opacity: 0;
+  transform: translateY(14px);
+  transition:
+    opacity 0.6s cubic-bezier(0.2, 0.7, 0.2, 1),
+    transform 0.6s cubic-bezier(0.2, 0.7, 0.2, 1);
+}
+[data-reveal].is-in {
+  opacity: 1;
+  transform: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+  [data-reveal] {
+    opacity: 1;
+    transform: none;
+  }
+  html {
+    scroll-behavior: auto;
+  }
+}
+
+/* ── surfaces ─────────────────────────────────────────────────── */
+
+/* faint instrument-grid used on dark hero surfaces */
+.grid-ink {
+  background-image: radial-gradient(rgba(201, 219, 213, 0.13) 1px, transparent 1px);
+  background-size: 26px 26px;
+}
+.grid-paper {
+  background-image: radial-gradient(rgba(11, 36, 34, 0.07) 1px, transparent 1px);
+  background-size: 26px 26px;
+}
+
+/* the ruled-paper look of the case-sheet document on the landing page */
+.sheet-rule {
+  background-image: repeating-linear-gradient(
+    to bottom,
+    transparent,
+    transparent 31px,
+    rgba(11, 36, 34, 0.05) 31px,
+    rgba(11, 36, 34, 0.05) 32px
+  );
+}
+
+/* ── print ────────────────────────────────────────────────────── */
+
+@media print {
+  .no-print {
+    display: none !important;
+  }
+  body {
+    background: #fff;
+  }
+  .print-sheet {
+    box-shadow: none !important;
+    border: none !important;
+    margin: 0 !important;
+    max-width: none !important;
+  }
+}
