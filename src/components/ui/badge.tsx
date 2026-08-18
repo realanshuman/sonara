@@ -15,7 +15,7 @@ const pillTones: Record<PillTone, string> = {
   ok: "bg-tint-petrol text-petrol",
   wait: "bg-tint-sand text-sand-text",
   /* live = something is being recorded, and nothing else. The brand
-     reserves signal red for this one job — if it starts meaning
+     reserves signal red for this one job. If it starts meaning
      "unsigned" or "error" too, it stops meaning "live". */
   live: "bg-tint-signal text-signal",
   warn: "bg-tint-amber text-amber-text",
@@ -23,7 +23,7 @@ const pillTones: Record<PillTone, string> = {
   dark: "bg-ink-2 text-ink-text",
 };
 
-/** Small mono status pill — queue states, visit states, delivery states. */
+/** Small mono status pill: queue states, visit states, delivery states. */
 export function Pill({
   tone = "neutral",
   className,
@@ -63,7 +63,7 @@ export function Tag({
         code ? "bg-tint-mist text-petrol" : "bg-tint-amber text-amber-text",
         className,
       )}
-      title={code ? `Coded · ${code}` : "Uncoded — free text"}
+      title={code ? `Coded · ${code}` : "Uncoded · free text"}
     >
       {label}
       {code ? <span className="text-[9.5px] text-sea">{code}</span> : null}
@@ -71,7 +71,7 @@ export function Tag({
   );
 }
 
-/** Clinical flag chip on the patient header — allergy, chronic, medication. */
+/** Clinical flag chip on the patient header: allergy, chronic, medication. */
 export function FlagChip({
   kind,
   children,

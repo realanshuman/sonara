@@ -95,14 +95,14 @@ export function AppShell({ children }: { children: ReactNode }) {
         )}
         <div className="flex-1" />
 
-        {/* connection state — honest, visible (PRD §11.3) */}
+        {/* connection state: honest, visible (PRD §11.3) */}
         <button
           type="button"
           onClick={() => actions.setConnection(state.connection === "offline")}
           title={
             state.connection === "online"
-              ? "Connection healthy — click to simulate a drop"
-              : "Offline — click to restore"
+              ? "Connection healthy · click to simulate a drop"
+              : "Offline · click to restore"
           }
           className={cx(
             "size-10 rounded-[10px] grid place-items-center transition-colors",
@@ -123,7 +123,7 @@ export function AppShell({ children }: { children: ReactNode }) {
             type="button"
             onClick={() => setMenuOpen((v) => !v)}
             className="mt-1 rounded-[9px] focus-visible:outline-sea"
-            title={`${me.fullName} — switch user`}
+            title={`${me.fullName} · switch user`}
             aria-haspopup="menu"
             aria-expanded={menuOpen}
           >
@@ -200,7 +200,7 @@ export function AppShell({ children }: { children: ReactNode }) {
             <span>
               <b className="font-semibold">Working offline.</b> Recordings and
               edits are saving locally and will sync when the connection
-              returns. Keep consulting — nothing is lost.
+              returns. Keep consulting, nothing is lost.
             </span>
             <button
               type="button"

@@ -67,7 +67,7 @@ export function TranscriptPanel({
         {segments.length === 0 ? (
           <p className="text-[14px] text-muted m-0">
             {live
-              ? "Listening — the first words land within a few seconds."
+              ? "Listening. The first words land within a few seconds."
               : "No transcript for this visit."}
           </p>
         ) : (
@@ -78,7 +78,8 @@ export function TranscriptPanel({
           >
             {segments.map((seg) => {
               const text = seg.correctedText ?? seg.text;
-              const isGap = seg.speaker === "UNKNOWN" && text.startsWith("—");
+              const isGap =
+                seg.speaker === "UNKNOWN" && /^recording (paused|resumed)$/.test(text);
               const dim = seg.confidence < 0.7;
               const hl = highlighted?.has(seg.seq);
               if (isGap) {
@@ -110,7 +111,7 @@ export function TranscriptPanel({
                         e.preventDefault();
                         actions.correctSegment(visit.id, seg.id, draft.trim());
                         setEditing(null);
-                        toast("Correction saved — it teaches this clinic's vocabulary");
+                        toast("Correction saved. It teaches this clinic's vocabulary");
                       }}
                     >
                       <input
@@ -159,7 +160,7 @@ export function TranscriptPanel({
         )}
         {!live && segments.length > 0 && visit.state !== "signed" && (
           <p className="t-mono-sm text-muted mt-3 mb-0">
-            Final pass shown — dotted lines were hard to hear. Tap a line to
+            Final pass shown. Dotted lines were hard to hear. Tap a line to
             correct it; corrections build this clinic's vocabulary, never a
             shared model.
           </p>

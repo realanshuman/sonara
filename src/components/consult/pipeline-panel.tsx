@@ -14,7 +14,7 @@ const STAGES: { key: PipelineStageKey; label: string }[] = [
 ];
 
 const STATE_LABEL: Record<StageState, string> = {
-  idle: "—",
+  idle: "-",
   running: "Working",
   done: "Done",
   failed: "Failed",

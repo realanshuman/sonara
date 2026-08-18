@@ -10,7 +10,7 @@ import type {
  *
  * In production the streaming transcript comes from the ASR provider and
  * the note from Claude with structured output (PRD §8.4, §9.1). The
- * scenarios below stand in for both so the entire core loop is walkable —
+ * scenarios below stand in for both so the entire core loop is walkable,
  * including diarization labels, code-mixed utterances, per-line
  * confidence, provenance and confidence flags.
  */
@@ -41,7 +41,7 @@ export const SCENARIOS: Scenario[] = [
     languageDetected: "Hindi + English",
     avgConfidence: 0.94,
     lines: [
-      { speaker: "DR", atMs: 4000, text: "Haan Priya, batao — kya taqleef ho rahi hai?", confidence: 0.97 },
+      { speaker: "DR", atMs: 4000, text: "Haan Priya, batao, kya taqleef ho rahi hai?", confidence: 0.97 },
       { speaker: "PT", atMs: 7000, text: "Do din se bukhar hai, and throat is paining a lot.", confidence: 0.95 },
       { speaker: "DR", atMs: 14000, text: "Cough? Sardi?", confidence: 0.98 },
       { speaker: "PT", atMs: 17000, text: "Dry cough hai. Raat ko zyada hota hai.", confidence: 0.93 },
@@ -60,9 +60,9 @@ export const SCENARIOS: Scenario[] = [
         "Fever ×2 days. Throat pain with mild odynophagia; reduced oral intake. Dry cough, nocturnal worsening. Tolerated azithromycin at a previous visit (12 Mar 2026). No breathlessness reported.",
       examination:
         "Pharyngeal erythema, tonsils mildly enlarged, no exudate. Temp 100.8°F. Chest clear.",
-      assessment: "Acute pharyngitis, likely viral — for review if not settling.",
+      assessment: "Acute pharyngitis, likely viral. For review if not settling.",
       plan:
-        "Symptomatic treatment. Review in 3 days if fever persists or breathing worsens. Antibiotic deferred — presentation reads viral.",
+        "Symptomatic treatment. Review in 3 days if fever persists or breathing worsens. Antibiotic deferred, presentation reads viral.",
     },
     confidenceFlags: {},
     tags: [
@@ -95,7 +95,7 @@ export const SCENARIOS: Scenario[] = [
       { speaker: "DR", atMs: 18000, text: "Ghari machine var reading ghetla hota ka?", confidence: 0.96 },
       { speaker: "PT", atMs: 22000, text: "Last week 150 by 95 hota, evening la.", confidence: 0.93 },
       { speaker: "DR", atMs: 30000, text: "Aaj clinic la BP 148/92 aahe. Pulse 78, regular. Chest clear, no oedema.", confidence: 0.96 },
-      { speaker: "DR", atMs: 44000, text: "Salt kami kara, walking chalu theva. Telma same dose chalu rahu dya — pan roz, na chukta.", confidence: 0.94 },
+      { speaker: "DR", atMs: 44000, text: "Salt kami kara, walking chalu theva. Telma same dose chalu rahu dya, pan roz, na chukta.", confidence: 0.94 },
       { speaker: "PT", atMs: 52000, text: "Ho doctor. Pudhchya veli sugar pan check karaycha ka?", confidence: 0.9 },
       { speaker: "DR", atMs: 56000, text: "Ho, pudhchya visit la fasting sugar ani lipid profile karun ya. Two weeks nantar bhetu.", confidence: 0.95 },
     ],
@@ -105,7 +105,7 @@ export const SCENARIOS: Scenario[] = [
       history:
         "On telmisartan 40mg daily; reports occasionally missing morning doses. Home reading last week 150/95 (evening). No chest pain or breathlessness reported.",
       examination: "BP 148/92 in clinic. Pulse 78, regular. Chest clear. No pedal oedema.",
-      assessment: "Hypertension — control suboptimal, adherence-related; draft for review.",
+      assessment: "Hypertension, control suboptimal and adherence-related (draft for review).",
       plan:
         "Continue telmisartan 40mg daily with emphasis on adherence. Salt restriction and daily walking reinforced. Fasting sugar and lipid profile before next visit. Review in 2 weeks.",
     },
@@ -136,7 +136,7 @@ export const SCENARIOS: Scenario[] = [
       { speaker: "DR", atMs: 15000, text: "Ulti? Loose motion?", confidence: 0.96 },
       { speaker: "ATT", atMs: 18000, text: "Ek baar ulti hui subah. Motion theek hai.", confidence: 0.9 },
       { speaker: "PT", atMs: 24000, text: "(crying)", confidence: 0.4 },
-      { speaker: "DR", atMs: 30000, text: "Throat red hai… ears dekh lete hain… tympanic membrane normal. Chest — thoda ro raha hai, sunna mushkil hai.", confidence: 0.62 },
+      { speaker: "DR", atMs: 30000, text: "Throat red hai… ears dekh lete hain… tympanic membrane normal. Chest, thoda ro raha hai, sunna mushkil hai.", confidence: 0.62 },
       { speaker: "DR", atMs: 48000, text: "Temp abhi 101.4 hai. Weight 19 kilo.", confidence: 0.88 },
       { speaker: "DR", atMs: 58000, text: "Bukhar ki syrup dunga weight ke hisaab se. Paani, ORS dete rahiye. Agar bukhar 3 din se zyada rahe ya rash aaye, turant lana.", confidence: 0.93 },
     ],
@@ -145,8 +145,8 @@ export const SCENARIOS: Scenario[] = [
       history:
         "High-grade fever since last night, reported up to 102°F at home. One episode of vomiting this morning. Stools normal. Oral intake reduced. History given by mother.",
       examination:
-        "Throat congested. Tympanic membranes normal. Temp 101.4°F, weight 19 kg. Chest auscultation limited — child crying; audio unclear in this section.",
-      assessment: "Febrile illness in a child, likely viral — examination partially limited.",
+        "Throat congested. Tympanic membranes normal. Temp 101.4°F, weight 19 kg. Chest auscultation limited: child crying, audio unclear in this section.",
+      assessment: "Febrile illness in a child, likely viral (examination partially limited).",
       plan:
         "Weight-appropriate antipyretic syrup. Maintain hydration with fluids and ORS. Return immediately if fever persists beyond 3 days, rash appears, or the child becomes drowsy.",
     },
@@ -173,19 +173,19 @@ export const SCENARIOS: Scenario[] = [
     languageDetected: "Hindi + English",
     avgConfidence: 0.92,
     lines: [
-      { speaker: "DR", atMs: 3000, text: "Haan, boliye — kya problem ho rahi hai?", confidence: 0.96 },
+      { speaker: "DR", atMs: 3000, text: "Haan, boliye, kya problem ho rahi hai?", confidence: 0.96 },
       { speaker: "PT", atMs: 6000, text: "Teen din se sardi hai, naak band rehti hai, and there is a headache also.", confidence: 0.93 },
       { speaker: "DR", atMs: 14000, text: "Bukhar aaya? Body pain?", confidence: 0.97 },
       { speaker: "PT", atMs: 17000, text: "Halka sa bukhar kal shaam ko tha. Body pain thoda hai.", confidence: 0.92 },
       { speaker: "DR", atMs: 26000, text: "Throat normal, nasal mucosa congested. Temp 99.2. Chest clear.", confidence: 0.95 },
-      { speaker: "DR", atMs: 38000, text: "Viral lag raha hai. Aaram karo, paani zyada. Dawa likh raha hoon — teen din mein theek nahi hua toh dobara aana.", confidence: 0.94 },
+      { speaker: "DR", atMs: 38000, text: "Viral lag raha hai. Aaram karo, paani zyada. Dawa likh raha hoon. Teen din mein theek nahi hua toh dobara aana.", confidence: 0.94 },
     ],
     note: {
       presentingComplaint: "Nasal congestion and headache for 3 days; low-grade fever yesterday evening.",
       history:
         "Coryza with blocked nose ×3 days, frontal headache, mild body ache. Low-grade fever yesterday evening. No cough or breathlessness reported.",
       examination: "Nasal mucosa congested. Throat normal. Temp 99.2°F. Chest clear.",
-      assessment: "Viral upper respiratory infection — draft.",
+      assessment: "Viral upper respiratory infection (draft).",
       plan: "Rest and hydration. Symptomatic treatment. Review in 3 days if not settling.",
     },
     confidenceFlags: {},

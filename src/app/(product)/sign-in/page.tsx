@@ -52,7 +52,7 @@ export default function SignInPage() {
             Let's not make this the slow part.
           </p>
           <p className="text-[15px] text-ink-muted mt-4 mb-0 max-w-[36ch] leading-relaxed">
-            Sign in and today's list is already loaded — token order, last
+            Sign in and today's list is already loaded: token order, last
             visit, allergies and running medication on every card.
           </p>
         </div>
@@ -167,7 +167,7 @@ export default function SignInPage() {
             </form>
           )}
 
-          {/* demo entry — skips the OTP theatre */}
+          {/* demo entry: skips the OTP theatre */}
           <div className="mt-8 pt-6 border-t border-line">
             <div className="t-label mb-2.5">Open the demo as</div>
             <div className="space-y-1.5">

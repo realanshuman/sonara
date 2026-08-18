@@ -24,15 +24,15 @@ const CONSENT_SCRIPTS: Record<ConsentLanguage, { name: string; text: string }> =
   {
     en: {
       name: "English",
-      text: "“I'm going to record this visit so your notes are written properly. The recording stays private, and you can say no — is that okay?”",
+      text: "“I'm going to record this visit so your notes are written properly. The recording stays private, and you can say no. Is that okay?”",
     },
     hi: {
       name: "हिन्दी",
-      text: "“मैं आपके नोट्स ठीक से लिखने के लिए यह परामर्श रिकॉर्ड करूँगा। रिकॉर्डिंग निजी रहेगी, और आप मना कर सकते हैं — ठीक है?”",
+      text: "“मैं आपके नोट्स ठीक से लिखने के लिए यह परामर्श रिकॉर्ड करूँगा। रिकॉर्डिंग निजी रहेगी, और आप मना कर सकते हैं। ठीक है?”",
     },
     mr: {
       name: "मराठी",
-      text: "“तुमच्या नोंदी नीट लिहिण्यासाठी मी ही तपासणी रेकॉर्ड करणार आहे. रेकॉर्डिंग खासगी राहील, आणि तुम्ही नाही म्हणू शकता — चालेल का?”",
+      text: "“तुमच्या नोंदी नीट लिहिण्यासाठी मी ही तपासणी रेकॉर्ड करणार आहे. रेकॉर्डिंग खासगी राहील, आणि तुम्ही नाही म्हणू शकता. चालेल का?”",
     },
   };
 
@@ -84,7 +84,7 @@ export function VisitPanel({
         }
       />
       <PanelBody className="space-y-3.5">
-        {/* ── consent — FR-CONS-1…6. Legally load-bearing; not simplifiable. ── */}
+        {/* ── consent: FR-CONS-1…6. Legally load-bearing; not simplifiable. ── */}
         {!ended && !activeConsent && (
           <div className="border border-tint-amber-line bg-tint-amber rounded-field p-4">
             <div className="flex items-center gap-2 mb-2.5">
@@ -131,17 +131,17 @@ export function VisitPanel({
                 size="sm"
                 onClick={() => {
                   actions.captureConsent(visit.id, lang, method);
-                  toast(`Consent recorded — ${CONSENT_SCRIPTS[lang].name}, ${method}`);
+                  toast(`Consent recorded · ${CONSENT_SCRIPTS[lang].name}, ${method}`);
                 }}
               >
-                Patient agreed — record consent
+                Patient agreed, record consent
               </Button>
               <Button
                 variant="quiet"
                 size="sm"
                 onClick={() => {
                   actions.manualNote(visit.id);
-                  toast("No recording — write the note below", "info");
+                  toast("No recording. Write the note below", "info");
                 }}
               >
                 Patient declined · write manually
@@ -149,7 +149,7 @@ export function VisitPanel({
             </div>
             {consent?.withdrawnAt && (
               <p className="t-mono-sm text-amber-text mt-3">
-                Earlier consent was withdrawn at {timeOfDay(consent.withdrawnAt)} —
+                Earlier consent was withdrawn at {timeOfDay(consent.withdrawnAt)},
                 audio and transcript are scheduled for deletion within 24h. A
                 fresh consent is needed to record again.
               </p>
@@ -161,7 +161,7 @@ export function VisitPanel({
           <div className="flex items-center gap-2.5 text-[13.5px] text-muted flex-wrap">
             <span className="size-[7px] rounded-full bg-sea shrink-0" />
             <span>
-              <b className="font-semibold text-ink">Consent on record</b> —{" "}
+              <b className="font-semibold text-ink">Consent on record</b>:{" "}
               {activeConsent.method}, asked in{" "}
               {CONSENT_SCRIPTS[activeConsent.language].name} at{" "}
               {timeOfDay(activeConsent.capturedAt)}. Applies to this visit
@@ -190,7 +190,7 @@ export function VisitPanel({
               }
               onClick={async () => {
                 const ok = await recorder.start("mic");
-                if (ok) toast("Recording — the transcript streams below", "info");
+                if (ok) toast("Recording. The transcript streams below", "info");
               }}
             >
               <span className="size-2 rounded-full bg-chalk/90" /> Start
@@ -253,14 +253,14 @@ export function VisitPanel({
             </span>
             {meta.bufferedChunks > 0 && (
               <span className="text-amber-text">
-                {meta.bufferedChunks} buffered locally — uploads on reconnect
+                {meta.bufferedChunks} buffered locally, uploads on reconnect
               </span>
             )}
             {recording && <span>auto-stop at 45:00</span>}
           </div>
         )}
 
-        {/* failure & warning states — plain language, never a raw error */}
+        {/* failure & warning states: plain language, never a raw error */}
         {recorder.micError && (
           <Banner
             tone="warn"
@@ -291,14 +291,14 @@ export function VisitPanel({
         {recording && recorder.silent && recorder.isRealMic && (
           <Banner tone="warn" icon={<IconWarn size={16} />}>
             <b className="font-semibold">We can't hear anything.</b> The level
-            meter has been flat for a few seconds — check the mic isn't muted.
+            meter has been flat for a few seconds. Check the mic isn't muted.
             The recording itself continues.
           </Banner>
         )}
         {recording && recorder.recovered && (
           <Banner tone="info">
             <b className="font-semibold">Recording recovered.</b> This visit
-            was mid-recording when the page was closed — the buffered audio
+            was mid-recording when the page was closed, so the buffered audio
             was kept and the clock resumed. End the visit whenever you're
             ready.
           </Banner>
@@ -306,7 +306,7 @@ export function VisitPanel({
         {recording && elapsed >= WARN_AT_S && (
           <Banner tone="warn" icon={<IconWarn size={16} />}>
             This recording has been running {Math.floor(elapsed / 60)} minutes.
-            It stops itself at 45 — the audio is always kept, never discarded.
+            It stops itself at 45, and the audio is always kept, never discarded.
           </Banner>
         )}
         {!recording && !ended && activeConsent && (
@@ -319,7 +319,7 @@ export function VisitPanel({
             >
               run a simulated consult
             </button>{" "}
-            — same pipeline, scripted audio.
+            with the same pipeline and scripted audio.
           </p>
         )}
 
@@ -355,7 +355,7 @@ export function VisitPanel({
                 );
                 setWithdrawOpen(false);
                 setWithdrawReason("");
-                toast("Recording stopped — deletion scheduled and logged", "warn");
+                toast("Recording stopped. Deletion scheduled and logged", "warn");
               }}
             >
               Stop &amp; schedule deletion

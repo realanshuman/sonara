@@ -1,7 +1,7 @@
 import type { ReactNode } from "react";
 import { cx } from "@/lib/cx";
 
-/** The workhorse surface of the app — a chalk card with a quiet header. */
+/** The workhorse surface of the app: a chalk card with a quiet header. */
 export function Panel({
   className,
   children,

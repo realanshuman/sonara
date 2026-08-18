@@ -107,7 +107,7 @@ export function PatientHeader({
         title="Move this visit to another patient"
       >
         <p className="text-[13.5px] text-muted mb-3.5 leading-relaxed">
-          Everything captured so far — consent, transcript and draft — moves
+          Everything captured so far (consent, transcript and draft) moves
           with the visit. After signing, a note can no longer be moved;
           corrections become addenda.
         </p>

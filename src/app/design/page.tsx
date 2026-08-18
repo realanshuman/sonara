@@ -30,7 +30,7 @@ import { cx } from "@/lib/cx";
 
 /**
  * The living design system. Everything here is the real component from
- * src/components — nothing is redrawn for the styleguide, so this page
+ * src/components. Nothing is redrawn for the styleguide, so this page
  * goes stale only if the product does.
  */
 
@@ -90,7 +90,7 @@ export default function DesignSystemPage() {
         <Section
           eyebrow="Identity"
           title="The mark"
-          lede="An aperture with a trace running through it. The line enters flat, breaks into speech, and exits the circle to the right — the consultation leaving the room as a record. The ring is knocked out where the trace crosses it, so the mark holds at 16px."
+          lede="An aperture with a trace running through it. The line enters flat, breaks into speech, and exits the circle to the right, the consultation leaving the room as a record. The ring is knocked out where the trace crosses it, so the mark holds at 16px."
         >
           <div className="grid sm:grid-cols-4 gap-4">
             <Tile caption="Primary · petrol on paper">
@@ -112,10 +112,10 @@ export default function DesignSystemPage() {
           </div>
 
           <div className="grid sm:grid-cols-2 gap-4 mt-4">
-            <Tile caption="Horizontal lockup — app headers, signatures">
+            <Tile caption="Horizontal lockup · app headers, signatures">
               <Lockup markSize={40} textSize={38} />
             </Tile>
-            <Tile caption="Expressive lockup — campaign only, never in product" dark>
+            <Tile caption="Expressive lockup · campaign only, never in product" dark>
               <ExpressiveLockup size={38} markClass="text-sea" textClass="text-chalk" />
             </Tile>
           </div>
@@ -143,7 +143,7 @@ export default function DesignSystemPage() {
         <Section
           eyebrow="Colour"
           title="Palette"
-          lede="Petrol carries the brand — the colour of scrubs and drapes, clinical without reading as a hospital corridor. Signal red has exactly one job."
+          lede="Petrol carries the brand: the colour of scrubs and drapes, clinical without reading as a hospital corridor. Signal red has exactly one job."
         >
           <div className="grid sm:grid-cols-3 lg:grid-cols-5 gap-3">
             {PALETTE.map((c) => (
@@ -165,7 +165,7 @@ export default function DesignSystemPage() {
 
           <Banner tone="live" icon={<IconMic size={16} />} className="mt-4">
             <b className="font-semibold">The signal rule.</b> Red appears only
-            while audio is being captured — the pulsing dot, the record button,
+            while audio is being captured: the pulsing dot, the record button,
             the word “Recording”. Not for errors, not for unsigned, not for
             delete buttons. If it means three things it means nothing, and a
             doctor can no longer tell at a glance whether the room is being
@@ -177,7 +177,7 @@ export default function DesignSystemPage() {
         <Section
           eyebrow="Typography"
           title="Three faces, three jobs"
-          lede="Bricolage Grotesque is the only place the brand raises its voice. Inter Tight runs the interface. IBM Plex Mono handles anything a doctor scans rather than reads — timecodes, speaker labels, doses, IDs."
+          lede="Bricolage Grotesque is the only place the brand raises its voice. Inter Tight runs the interface. IBM Plex Mono handles anything a doctor scans rather than reads: timecodes, speaker labels, doses, IDs."
         >
           <Card className="space-y-0">
             <TypeRow label="Display / 800">
@@ -218,7 +218,7 @@ export default function DesignSystemPage() {
               <h3 className="t-h3 text-[16px] mb-2">A gapped scale</h3>
               <p className="text-[14.5px] text-muted m-0 leading-relaxed">
                 Display 60 / 38 / 26 · Body 19 / 16 / 14.5 · Mono 14 / 12 / 11.
-                Nothing between 19 and 26 — the gap is what makes hierarchy
+                Nothing between 19 and 26, and that gap is what makes hierarchy
                 obvious at a glance in a busy OPD.
               </p>
             </Card>
@@ -236,7 +236,7 @@ export default function DesignSystemPage() {
               <p className="text-[14.5px] text-muted m-0 leading-relaxed">
                 Every label, button and heading. Title Case reads as marketing;
                 this product sits next to a patient. Body text never below 16px
-                — the primary user is over 40, reading across a desk.
+                The primary user is over 40, reading across a desk.
               </p>
             </Card>
           </div>
@@ -246,7 +246,7 @@ export default function DesignSystemPage() {
         <Section
           eyebrow="Status"
           title="The state vocabulary"
-          lede="A visit moves through a fixed set of states, and each has one colour everywhere it appears — the queue, the visit header, the prescription list, the audit log."
+          lede="A visit moves through a fixed set of states, and each has one colour everywhere it appears: the queue, the visit header, the prescription list, the audit log."
         >
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-3">
             {TONES.map((t) => (
@@ -263,7 +263,7 @@ export default function DesignSystemPage() {
           </div>
 
           <div className="flex flex-wrap items-center gap-2.5 mt-5">
-            <span className="t-label w-full">Clinical flags — never collapsible</span>
+            <span className="t-label w-full">Clinical flags · never collapsible</span>
             <FlagChip kind="allergy">
               <IconWarn size={11} /> Allergy · Penicillin (severe)
             </FlagChip>
@@ -274,7 +274,7 @@ export default function DesignSystemPage() {
 
           <div className="flex flex-wrap items-center gap-2.5 mt-5">
             <span className="t-label w-full">
-              Extracted tags — coded in mist, uncoded flagged amber
+              Extracted tags · coded in mist, uncoded flagged amber
             </span>
             <Tag label="fever" code="R50.9" />
             <Tag label="sore throat" code="R07.0" />
@@ -351,7 +351,7 @@ export default function DesignSystemPage() {
 
             <Divider className="my-6" />
 
-            <div className="t-label mb-3">Icons — 24-grid, stroked 1.8, round caps</div>
+            <div className="t-label mb-3">Icons · 24-grid, stroked 1.8, round caps</div>
             <div className="flex flex-wrap gap-4 text-ink">
               {[IconToday, IconPatients, IconNote, IconRx, IconMic, IconWave, IconSign, IconPrint, IconSearch, IconPen, IconCheck, IconWarn, IconWifiOff, IconClose].map(
                 (Icon, i) => (
@@ -371,7 +371,7 @@ export default function DesignSystemPage() {
         <Section
           eyebrow="Components"
           title="Surfaces & feedback"
-          lede="One panel, one card, one banner. The banner text is always plain language — a doctor mid-clinic should never have to interpret a state."
+          lede="One panel, one card, one banner. The banner text is always plain language, because a doctor mid-clinic should never have to interpret a state."
         >
           <div className="grid lg:grid-cols-2 gap-4 items-start">
             <Panel>
@@ -399,11 +399,11 @@ export default function DesignSystemPage() {
 
             <div className="space-y-3">
               <Banner tone="warn" icon={<IconWarn size={16} />}>
-                Audio was unclear here — please check the examination section.
+                Audio was unclear here. Please check the examination section.
               </Banner>
               <Banner tone="live" icon={<IconMic size={16} />}>
                 <b className="font-semibold">We can't hear anything.</b> The meter
-                has been flat for a few seconds — check the mic isn't muted. The
+                has been flat for a few seconds. Check the mic isn't muted. The
                 recording continues.
               </Banner>
               <Banner tone="info" icon={<IconWifiOff size={16} />}>
@@ -454,7 +454,7 @@ export default function DesignSystemPage() {
             </p>
             <div className="flex justify-end gap-2.5">
               <Button variant="primary" onClick={() => setModalOpen(false)}>
-                Remove it — good catch
+                Remove it, good catch
               </Button>
               <Button onClick={() => setModalOpen(false)}>Override &amp; add</Button>
             </div>
@@ -475,7 +475,7 @@ export default function DesignSystemPage() {
         <Section
           eyebrow="Voice"
           title="Say the thing, then stop"
-          lede="The reader is a doctor with eleven people waiting outside. Never claim the software knows anything clinical — it drafts, the doctor decides."
+          lede="The reader is a doctor with eleven people waiting outside. Never claim the software knows anything clinical: it drafts, the doctor decides."
         >
           <div className="grid md:grid-cols-2 gap-4">
             <Card>
@@ -484,7 +484,7 @@ export default function DesignSystemPage() {
                 “Note ready. <span className="text-sea">Review before signing.</span>”
               </p>
               <p className="font-display font-semibold text-[18px] tracking-[-0.015em] leading-snug m-0">
-                “Couldn't hear the last 40 seconds — the room got loud.{" "}
+                “Couldn't hear the last 40 seconds. The room got loud.{" "}
                 <span className="text-sea">Recording saved anyway.</span>”
               </p>
             </Card>
@@ -533,7 +533,7 @@ export default function DesignSystemPage() {
         >
           <Card>
             <KV k="Tokens">
-              <code className="font-mono text-[13px]">src/app/globals.css</code> —
+              <code className="font-mono text-[13px]">src/app/globals.css</code>:
               colours, type utilities, radii, shadows, motion
             </KV>
             <KV k="Brand mark">
@@ -542,7 +542,7 @@ export default function DesignSystemPage() {
               </code>
             </KV>
             <KV k="Primitives">
-              <code className="font-mono text-[13px]">src/components/ui/*</code> —
+              <code className="font-mono text-[13px]">src/components/ui/*</code>:
               button, badge, panel, field, modal, toast, waveform, icons
             </KV>
             <KV k="Focus ring">

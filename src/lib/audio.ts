@@ -2,7 +2,7 @@
 
 /**
  * Real microphone capture for the level meter (FR-REC-1, FR-REC-4,
- * FR-REC-5). The demo does not persist audio anywhere — the stream feeds
+ * FR-REC-5). The demo does not persist audio anywhere. The stream feeds
  * the meter and a byte counter only, and is torn down on stop.
  *
  * If the mic is unreachable the caller gets a plain-language failure

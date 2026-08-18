@@ -13,7 +13,7 @@ import { dayMonth, shortDate } from "@/lib/format";
 import type { Patient, Visit } from "@/lib/types";
 
 /**
- * Patient context beside the consult — record first, prior visits second.
+ * Patient context beside the consult: record first, prior visits second.
  * Deliberately not a suggestion panel: V1.0 makes no clinical proposals
  * (PRD §3.1). Everything here is the doctor's own prior record.
  */
@@ -115,8 +115,7 @@ export function ContextRail({
                     </span>
                     <span className="min-w-0 flex-1">
                       <span className="block text-[13.5px] font-semibold truncate">
-                        {n?.sections.assessment?.replace(/\s*—.*$/, "") ??
-                          "Visit"}
+                        {shortAssessment(n?.sections.assessment)}
                       </span>
                       <span className="block t-mono-sm text-muted truncate">
                         {rx && rx.items.length > 0
@@ -157,6 +156,21 @@ export function ContextRail({
       </div>
     </aside>
   );
+}
+
+/**
+ * The rail shows a short label for a past visit: take the first sentence
+ * of the assessment and drop the "(draft)" qualifier. Trailing punctuation
+ * is stripped first so the qualifier is actually at the end when matched.
+ */
+function shortAssessment(assessment?: string) {
+  const label = (assessment ?? "")
+    .split(". ")[0]
+    .replace(/[.\s]+$/, "")
+    .replace(/\s*\(draft[^)]*\)$/i, "")
+    .replace(/[.,\s]+$/, "")
+    .trim();
+  return label || "Visit";
 }
 
 function RailGroup({

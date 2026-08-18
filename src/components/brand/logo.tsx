@@ -5,7 +5,7 @@ import { useId } from "react";
 /**
  * The Sonara mark: an aperture with a trace running through it.
  * The line enters flat, breaks into speech, and exits the circle to the
- * right — the consultation leaving the room as a record. The ring is
+ * right, the consultation leaving the room as a record. The ring is
  * knocked out where the trace crosses it (via mask) so the mark stays
  * legible down to 16px.
  */
@@ -63,7 +63,7 @@ export function Mark({
   );
 }
 
-/** Horizontal lockup — the default for app headers and signatures. */
+/** Horizontal lockup: the default for app headers and signatures. */
 export function Lockup({
   markSize = 26,
   textSize = 20,
@@ -88,7 +88,7 @@ export function Lockup({
 }
 
 /**
- * Expressive lockup — the mark replaces the "o". Campaign use only,
+ * Expressive lockup: the mark replaces the "o". Campaign use only,
  * never inside the product. Used once, on the landing-page close.
  */
 export function ExpressiveLockup({

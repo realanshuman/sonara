@@ -7,7 +7,7 @@ import { useEffect, useRef } from "react";
  * provided; otherwise renders a synthetic speech-shaped animation
  * (mode="demo") or a frozen/flat trace.
  *
- * FR-REC-4: if the input is silent the bars sit visibly flat — the
+ * FR-REC-4: if the input is silent the bars sit visibly flat, and the
  * silence itself is the warning, surfaced by the parent component.
  */
 export function Waveform({

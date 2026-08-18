@@ -1,7 +1,7 @@
 /**
  * Fuzzy patient search (FR-APPT-3): typing "priya nai" must return
  * "Priya Nair". Every query token has to match a word of the name by
- * prefix, small edit distance, or subsequence — or match the phone.
+ * prefix, small edit distance, or subsequence, or match the phone.
  */
 
 function editDistanceAtMost1(a: string, b: string): boolean {

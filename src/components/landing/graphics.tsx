@@ -72,7 +72,7 @@ export function CodeMixDiagram() {
   );
 }
 
-/** Two speaker lanes over a shared time axis — what diarization does. */
+/** Two speaker lanes over a shared time axis: what diarization does. */
 export function DiarizationGraphic() {
   const dr: [number, number][] = [
     [2, 9],

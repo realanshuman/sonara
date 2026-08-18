@@ -6,7 +6,7 @@ import { cx } from "@/lib/cx";
 
 /**
  * The landing page's one moving part: a single container in which the
- * transcript becomes the note. Not two panels side by side — the same
+ * transcript becomes the note. Not two panels side by side, but the same
  * space, transformed, because that is the actual claim ("the consultation
  * already contains the note").
  */
@@ -14,7 +14,7 @@ import { cx } from "@/lib/cx";
 type Phase = "idle" | "recording" | "processing" | "note" | "signed";
 
 const LINES = [
-  { s: "DR", t: "00:04", text: "Haan Priya, batao — kya taqleef ho rahi hai?" },
+  { s: "DR", t: "00:04", text: "Haan Priya, batao, kya taqleef ho rahi hai?" },
   { s: "PT", t: "00:07", text: "Do din se bukhar hai, and throat is paining a lot." },
   { s: "DR", t: "00:14", text: "Cough? Sardi?" },
   { s: "PT", t: "00:17", text: "Dry cough hai. Raat ko zyada hota hai." },
@@ -45,7 +45,7 @@ const FIELDS = [
     tags: [],
   },
   {
-    k: "Assessment — draft",
+    k: "Assessment (draft)",
     v: "Acute pharyngitis, likely viral.",
     from: [4],
     tags: [],
@@ -325,7 +325,7 @@ export function ConsultDemo() {
   );
 }
 
-/** The shared time axis — waveform while live, source marks while reviewing. */
+/** The shared time axis: waveform while live, source marks while reviewing. */
 function TimeAxis({
   active,
   progress,
@@ -409,7 +409,7 @@ function TimeAxis({
         })}
       </svg>
 
-      {/* source marks — light up when a note line is hovered */}
+      {/* source marks: they light up when a note line is hovered */}
       <div className="relative h-4 mt-0.5">
         {marks.map((m, i) => {
           const on = highlight?.includes(i);

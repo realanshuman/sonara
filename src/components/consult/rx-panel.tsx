@@ -53,7 +53,7 @@ export function RxPanel({ visit, patient }: { visit: Visit; patient: Patient }) 
   if (!isClinical) return null;
 
   const itemName = (it: RxItem) =>
-    drugById(it.drugId)?.brand ?? it.freeTextName ?? "—";
+    drugById(it.drugId)?.brand ?? it.freeTextName ?? "-";
 
   const tryAdd = (item: Omit<RxItem, "id" | "seq" | "source">) => {
     const conflict = allergyConflict(
@@ -95,7 +95,7 @@ export function RxPanel({ visit, patient }: { visit: Visit; patient: Patient }) 
           <p className="text-[14px] text-muted mt-0 mb-3">
             {signed
               ? "No medication was prescribed at this visit."
-              : "You compose the prescription — Sonara formats it, checks it against recorded allergies, and delivers it after you sign. It never suggests a drug."}
+              : "You compose the prescription. Sonara formats it, checks it against recorded allergies, and delivers it after you sign. It never suggests a drug."}
           </p>
         )}
 
@@ -115,7 +115,7 @@ export function RxPanel({ visit, patient }: { visit: Visit; patient: Patient }) 
                   </div>
                   <div className="t-mono text-muted mt-0.5">
                     {[
-                      it.strength !== "—" ? it.strength : null,
+                      it.strength !== "-" ? it.strength : null,
                       it.form,
                       it.frequency,
                       it.durationDays ? `${it.durationDays}d` : null,
@@ -165,15 +165,15 @@ export function RxPanel({ visit, patient }: { visit: Visit; patient: Patient }) 
               </Button>
               <span className="t-mono-sm text-muted leading-relaxed">
                 {verified
-                  ? `${me.fullName} · ${profile?.registrationNumber} — signature applied only on your approval`
+                  ? `${me.fullName} · ${profile?.registrationNumber} · signature applied only on your approval`
                   : me.role === "front_desk"
                     ? "Signing is a doctor's action."
-                    : "Signing unlocks once your registration is verified — drafting works meanwhile."}
+                    : "Signing unlocks once your registration is verified. Drafting works meanwhile."}
               </span>
             </div>
             {!note && (
               <p className="t-mono-sm text-muted mt-2 mb-0">
-                A case sheet is needed before signing — record the visit or
+                A case sheet is needed before signing. Record the visit or
                 write one manually above.
               </p>
             )}
@@ -188,7 +188,7 @@ export function RxPanel({ visit, patient }: { visit: Visit; patient: Patient }) 
               {rx.signatureSnapshot?.registration} · hash {rx.contentHash}
             </div>
 
-            {/* delivery — FR-RX-7 */}
+            {/* delivery: FR-RX-7 */}
             <div className="mt-4 pt-4 border-t border-line">
               <div className="t-label mb-2.5">Deliver to the patient</div>
               <div className="flex gap-2 flex-wrap">
@@ -275,7 +275,7 @@ export function RxPanel({ visit, patient }: { visit: Visit; patient: Patient }) 
               recorded allergy: <b className="font-semibold">{block.allergy}</b>
               {(() => {
                 const f = flags.allergies.find((x) => x.label === block.allergy);
-                return f?.detail ? ` — ${f.detail}` : "";
+                return f?.detail ? `, ${f.detail}` : "";
               })()}
               .
             </Banner>
@@ -300,7 +300,7 @@ export function RxPanel({ visit, patient }: { visit: Visit; patient: Patient }) 
                   setOverrideReason("");
                 }}
               >
-                Remove it — good catch
+                Remove it, good catch
               </Button>
               <Button
                 disabled={overrideReason.trim().length < 10}
@@ -339,7 +339,7 @@ export function RxPanel({ visit, patient }: { visit: Visit; patient: Patient }) 
         onSign={() => {
           actions.signVisit(visit.id);
           setSignOpen(false);
-          toast("Signed — the note is locked and the prescription is ready to deliver");
+          toast("Signed. The note is locked and the prescription is ready to deliver");
           document.getElementById("rx")?.scrollIntoView({ behavior: "smooth" });
         }}
       />
@@ -387,7 +387,7 @@ function AddDrugForm({
         onAdd({
           drugId: picked?.id,
           freeTextName: picked ? undefined : q.trim(),
-          strength: picked?.strength ?? "—",
+          strength: picked?.strength ?? "-",
           form: picked?.form ?? "as written",
           frequency,
           durationDays: duration ? Number(duration) : null,
@@ -398,13 +398,13 @@ function AddDrugForm({
       <Field label="Medicine">
         <div className="relative">
           <Input
-            value={picked ? `${picked.brand} — ${picked.generic}` : q}
+            value={picked ? `${picked.brand} · ${picked.generic}` : q}
             onChange={(e) => {
               setPicked(undefined);
               setFreeText(false);
               setQ(e.target.value);
             }}
-            placeholder="Start typing a brand or generic — e.g. dolo, augmentin"
+            placeholder="Start typing a brand or generic, e.g. dolo, augmentin"
             autoFocus
             aria-autocomplete="list"
           />
@@ -434,7 +434,7 @@ function AddDrugForm({
                 onClick={() => setFreeText(true)}
                 className="w-full px-3.5 py-2 text-left t-mono-sm text-muted hover:bg-soft border-t border-line"
               >
-                Use “{q}” as written — free text, flagged as unverified
+                Use “{q}” as written, as free text flagged unverified
               </button>
             </div>
           )}
@@ -446,7 +446,7 @@ function AddDrugForm({
                 className="w-full px-3.5 py-2 text-left text-[13.5px] hover:bg-soft"
               >
                 Not in the drug database. Use{" "}
-                <b className="font-semibold">“{q}”</b> as free text —{" "}
+                <b className="font-semibold">“{q}”</b> as free text.{" "}
                 <span className="t-mono-sm text-amber-text">
                   it prints exactly as typed, marked unverified
                 </span>
@@ -458,7 +458,7 @@ function AddDrugForm({
 
       {wouldConflict && (
         <Banner tone="warn" icon={<IconWarn size={14} />}>
-          Heads up — this matches the recorded allergy “{wouldConflict.allergy}
+          Heads up: this matches the recorded allergy “{wouldConflict.allergy}
           ”. Adding it will require a typed override.
         </Banner>
       )}
@@ -548,7 +548,7 @@ function SignSheet({
               <div className="t-label">{label}</div>
               <p className="text-[13.5px] leading-relaxed m-0 whitespace-pre-wrap">
                 {note.sections[key]?.trim() || (
-                  <span className="text-muted">— left empty —</span>
+                  <span className="text-muted">left empty</span>
                 )}
               </p>
             </div>
@@ -582,13 +582,13 @@ function SignSheet({
             })
           ) : (
             <p className="text-[13.5px] text-muted m-0">
-              No medication — the case sheet is signed on its own.
+              No medication. The case sheet is signed on its own.
             </p>
           )}
           {overrides.length > 0 && (
             <p className="t-mono-sm text-amber-text mt-2 mb-0">
               Includes {overrides.length} allergy override
-              {overrides.length > 1 ? "s" : ""} — reason on record.
+              {overrides.length > 1 ? "s" : ""}, reason on record.
             </p>
           )}
         </div>
@@ -607,7 +607,7 @@ function SignSheet({
 
       <p className="t-mono-sm text-muted leading-relaxed mb-4">
         Signing locks the note and the prescription. Corrections after this
-        point are addenda or a fresh prescription — the signed record itself
+        point are addenda or a fresh prescription. The signed record itself
         never changes.
       </p>
       <div className="flex justify-end gap-2.5">

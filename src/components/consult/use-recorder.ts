@@ -118,7 +118,7 @@ export function useRecorder(visitId: string, patientId: string) {
   }, [actions, clearTimers, visitId]);
   endRef.current = end;
 
-  /** consent withdrawn: stop capture, run no pipeline — the store handles
+  /** consent withdrawn: stop capture, run no pipeline. The store handles
       state transition and the deletion audit entries */
   const stopForWithdrawal = useCallback(() => {
     clearTimers();
@@ -140,7 +140,7 @@ export function useRecorder(visitId: string, patientId: string) {
   // Recovery: the visit is mid-recording in the store but this component
   // just mounted (tab was closed / navigated away). Resume the clock from
   // the stored start time; the mic handle is gone, so the meter runs in
-  // demo mode — mirrors FR-REC recovery behaviour.
+  // demo mode. Mirrors FR-REC recovery behaviour.
   useEffect(() => {
     if (recording && !timerRef.current && meta) {
       const already = (Date.now() - meta.startedAt) / 1000;
@@ -153,7 +153,7 @@ export function useRecorder(visitId: string, patientId: string) {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [recording]);
 
-  // teardown on unmount: release the mic but keep the visit recording —
+  // teardown on unmount: release the mic but keep the visit recording;
   // the store clock carries on and the session recovers on return.
   useEffect(
     () => () => {

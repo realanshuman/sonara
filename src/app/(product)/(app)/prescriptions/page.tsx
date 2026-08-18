@@ -112,7 +112,7 @@ export default function PrescriptionsPage() {
       {rows.length === 0 ? (
         <EmptyState icon={<IconRx size={34} />} title="Nothing here yet">
           Prescriptions appear once a medicine has been added to a visit.
-          They stay unsigned — and undeliverable — until a verified doctor
+          They stay unsigned, and undeliverable, until a verified doctor
           signs.
         </EmptyState>
       ) : (

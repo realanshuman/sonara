@@ -5,7 +5,7 @@
 **The consultation already contains the note.**
 
 Ambient clinical documentation and prescription assistant for Indian
-outpatient practice — a working V1.0 build of the [product spec](./sonara-prd.md).
+outpatient practice. A working V1.0 build of the [product spec](./sonara-prd.md).
 
 </div>
 
@@ -13,11 +13,11 @@ outpatient practice — a working V1.0 build of the [product spec](./sonara-prd.
 
 Sonara records the doctor–patient consultation, separates the speakers, and
 produces a structured case sheet and an unsigned draft prescription that the
-doctor reviews and signs — before the patient has left the room.
+doctor reviews and signs, before the patient has left the room.
 
 The wedge is **code-mixed Indian consultations**. A patient says *"Do din se
 bukhar hai, and throat is paining."* That is one sentence in two languages.
-Handling it cleanly — and writing the note in English regardless — is the
+Handling it cleanly, and writing the note in English regardless, is the
 thing a global competitor cannot ship quickly and a local competitor cannot
 build quickly.
 
@@ -25,11 +25,11 @@ build quickly.
 
 | Route | What it is |
 |---|---|
-| `/` | Landing page — built from scratch for this repo |
+| `/` | Landing page, built from scratch for this repo |
 | `/design` | Living design system, rendered from the real components |
 | `/sign-in`, `/onboarding` | Auth surfaces, including the registration-verification gate |
 | `/today` | The clinic day: queue, walk-ins, fuzzy search, role-aware actions |
-| `/consult/[visitId]` | **The core loop** — consent → record → transcript → case sheet → prescription → sign → deliver |
+| `/consult/[visitId]` | **The core loop**: consent → record → transcript → case sheet → prescription → sign → deliver |
 | `/patients`, `/patients/[id]` | Records, flags, visit timeline, export, erasure |
 | `/prescriptions` | Signed and unsigned, with delivery state |
 | `/audit` | Append-only log of every clinical action, including reads |
@@ -43,7 +43,7 @@ Front desk marks the patient arrived
   → doctor opens Today, taps the card
   → patient profile loads: age, last visit, allergies, running medication
   → doctor reads the consent line in the patient's language, ticks consent
-      [BLOCKING — the record button is disabled, and the store refuses]
+      [BLOCKING: the record button is disabled, and the store refuses]
   → taps Start recording; live transcript streams in with DR / PT labels
   → taps End visit
   → Audio saved → Transcript complete → 2 speakers found → Case sheet drafted
@@ -54,7 +54,7 @@ Front desk marks the patient arrived
 ```
 
 Every line of the draft traces back to the seconds of transcript that
-produced it — hover a section and the source utterances light up.
+produced it. Hover a section and the source utterances light up.
 
 ## Try it
 
@@ -70,10 +70,10 @@ Three things worth walking:
 
 1. **The core loop.** Open Priya Nair's room. The record button is disabled
    until consent is captured. Use *run a simulated consult* if you'd rather
-   not talk to your microphone — the pipeline is identical.
+   not talk to your microphone. The pipeline is identical.
 2. **The allergy hard stop.** Open Rakesh Bhosale (penicillin allergy on
    file) and try to add Augmentin. It blocks, and only a typed clinical
-   reason gets past it — which is logged with your name.
+   reason gets past it, which is logged with your name.
 3. **Role separation.** Switch to Sunita (front desk) from the avatar menu.
    Clinical notes, transcripts and prescriptions disappear; every record
    access is still written to the audit log.
@@ -106,7 +106,7 @@ Next.js 15 (App Router) · TypeScript · Tailwind v4 · React 19.
 The demo runs on a typed client store whose shapes mirror the PRD's
 Postgres schema, so moving to Neon + Drizzle with row-level security is a
 data-layer swap rather than a rewrite. See [CLAUDE.md](./CLAUDE.md) for
-what is simulated and what to replace first — the short answer is the ASR
+what is simulated and what to replace first. The short answer is the ASR
 provider, the note generation, and a licensed Indian drug database.
 
 ## Design
@@ -115,7 +115,7 @@ Tokens live in one file (`src/app/globals.css`) and `/design` renders the
 styleguide from the real components, so it can only go stale if the product
 does.
 
-Petrol carries the brand. **Signal red means "recording" and nothing else** —
+Petrol carries the brand. **Signal red means "recording" and nothing else**:
 the moment it also means "error" it stops telling a doctor whether the room
 is live. Three faces do three jobs: Bricolage Grotesque for display, Inter
 Tight for the interface, IBM Plex Mono for anything scanned rather than read.

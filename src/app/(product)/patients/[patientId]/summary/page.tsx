@@ -10,7 +10,7 @@ import { drugById } from "@/lib/drugs";
 import { NOTE_SECTIONS } from "@/lib/types";
 import { dateTimeStamp, patientCode, shortDate } from "@/lib/format";
 
-/** FR-PAT-6: the PDF half of data portability — a printable record. */
+/** FR-PAT-6: the PDF half of data portability, as a printable record. */
 export default function PatientSummaryPage({
   params,
 }: {
@@ -70,19 +70,19 @@ export default function PatientSummaryPage({
             title="Allergies"
             items={flags.allergies.map(
               (f) =>
-                `${f.label}${f.detail ? ` — ${f.detail}` : ""}${f.severity ? ` (${f.severity})` : ""}`,
+                `${f.label}${f.detail ? `, ${f.detail}` : ""}${f.severity ? ` (${f.severity})` : ""}`,
             )}
           />
           <SummaryList
             title="Chronic conditions"
             items={flags.chronic.map(
-              (f) => `${f.label}${f.detail ? ` — ${f.detail}` : ""}`,
+              (f) => `${f.label}${f.detail ? `, ${f.detail}` : ""}`,
             )}
           />
           <SummaryList
             title="Running medication"
             items={flags.meds.map(
-              (f) => `${f.label}${f.detail ? ` — ${f.detail}` : ""}`,
+              (f) => `${f.label}${f.detail ? `, ${f.detail}` : ""}`,
             )}
           />
         </section>
@@ -141,7 +141,7 @@ export default function PatientSummaryPage({
                 )}
                 {addenda.map((a) => (
                   <p key={a.id} className="text-[13px] mt-2 mb-0 pl-3 border-l-2 border-mist">
-                    <b className="font-semibold">Addendum</b> ({dateTimeStamp(a.createdAt)}): {a.body} — {a.reason}
+                    <b className="font-semibold">Addendum</b> ({dateTimeStamp(a.createdAt)}): {a.body} · {a.reason}
                   </p>
                 ))}
               </div>
@@ -155,7 +155,7 @@ export default function PatientSummaryPage({
             {state.clinic.name}
           </span>
           <br />
-          Audio recordings are not part of this export — they are purged after{" "}
+          Audio recordings are not part of this export. They are purged after{" "}
           {state.clinic.audioRetentionDays} days. The signed note is the medical
           record.
         </footer>

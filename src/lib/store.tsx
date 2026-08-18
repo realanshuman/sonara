@@ -343,7 +343,7 @@ function reducer(s: AppState, a: Act): AppState {
         speaker: "UNKNOWN",
         startMs: a.atMs,
         endMs: a.atMs,
-        text: a.paused ? "— recording paused —" : "— recording resumed —",
+        text: a.paused ? "recording paused" : "recording resumed",
         confidence: 1,
       };
       const next = {
@@ -453,7 +453,7 @@ function reducer(s: AppState, a: Act): AppState {
     }
 
     case "MANUAL_NOTE": {
-      // FR-CONS-6: the manual path is first-class — an empty, editable
+      // FR-CONS-6: the manual path is first-class: an empty, editable
       // draft with no recording attached, not a degraded mode.
       if (s.notes[a.visitId]) return s;
       const visits = s.visits.map((v) =>
@@ -476,7 +476,7 @@ function reducer(s: AppState, a: Act): AppState {
             confidenceFlags: {},
             state: "draft",
             modelUsed: "manual",
-            promptVersion: "—",
+            promptVersion: "-",
             generationMs: 0,
             updatedAt: new Date().toISOString(),
           },
@@ -830,7 +830,7 @@ export function StoreProvider({ children }: { children: ReactNode }) {
       try {
         localStorage.setItem(STORAGE_KEY, JSON.stringify(state));
       } catch {
-        /* storage full or unavailable — demo keeps running in memory */
+        /* storage full or unavailable; demo keeps running in memory */
       }
     }, 400);
   }, [state]);

@@ -26,9 +26,9 @@ import {
 } from "@/components/ui/icons";
 
 export const metadata: Metadata = {
-  title: "Sonara — the consultation already contains the note",
+  title: "Sonara: the consultation already contains the note",
   description:
-    "Sonara listens to the visit, tells the two voices apart, and writes the case sheet. You read it, fix what's wrong, and sign — before the patient stands up. Built for code-mixed Indian OPD practice.",
+    "Sonara listens to the visit, tells the two voices apart, and writes the case sheet. You read it, fix what's wrong, and sign before the patient stands up. Built for code-mixed Indian OPD practice.",
 };
 
 export default function LandingPage() {
@@ -37,7 +37,7 @@ export default function LandingPage() {
       <RevealOnScroll />
       <LandingNav />
 
-      {/* ═══════════ HERO — dark instrument panel ═══════════ */}
+      {/* ═══════════ HERO: dark instrument panel ═══════════ */}
       <section className="relative bg-ink text-ink-text pt-[128px] pb-[184px] overflow-hidden">
         <div className="absolute inset-0 grid-ink opacity-70" aria-hidden />
         {/* the trace runs along the floor of the hero, under everything */}
@@ -59,7 +59,7 @@ export default function LandingPage() {
             <p className="text-[18px] sm:text-[19px] text-ink-muted leading-relaxed max-w-[50ch] m-0">
               Nobody is writing it down. Sonara listens to the visit, tells your
               voice from the patient's, and hands you a finished case sheet and
-              a draft prescription — while they're still putting their shoes
+              a draft prescription, while they're still putting their shoes
               on.
             </p>
             <div className="flex flex-wrap gap-2.5 mt-8">
@@ -81,7 +81,7 @@ export default function LandingPage() {
             </p>
           </div>
 
-          {/* readout column — the claim, stated as instrument values */}
+          {/* readout column: the claim, stated as instrument values */}
           <dl className="m-0 lg:pb-2">
             {[
               ["Consult", "6 min 12 s", "recorded in the room, as it happened"],
@@ -112,7 +112,7 @@ export default function LandingPage() {
         </div>
       </section>
 
-      {/* ═══════════ THE DEMO — overlapping the hero ═══════════ */}
+      {/* ═══════════ THE DEMO: overlapping the hero ═══════════ */}
       <section className="relative -mt-24 z-10">
         <div className="max-w-[1000px] mx-auto px-6">
           <div data-reveal>
@@ -139,7 +139,7 @@ export default function LandingPage() {
         </div>
       </section>
 
-      {/* ═══════════ THE PROBLEM — as a ledger ═══════════ */}
+      {/* ═══════════ THE PROBLEM: as a ledger ═══════════ */}
       <section className="py-28">
         <div className="max-w-[1180px] mx-auto px-6 grid lg:grid-cols-[1fr_1.05fr] gap-14 items-start">
           <div data-reveal>
@@ -218,7 +218,7 @@ export default function LandingPage() {
         </div>
       </section>
 
-      {/* ═══════════ HOW A VISIT RUNS — swimlane ═══════════ */}
+      {/* ═══════════ HOW A VISIT RUNS: swimlane ═══════════ */}
       <section id="how" className="py-24 bg-chalk border-y border-line">
         <div className="max-w-[1180px] mx-auto px-6">
           <div className="max-w-[58ch] mb-12" data-reveal>
@@ -229,7 +229,7 @@ export default function LandingPage() {
             <p className="text-[17px] text-muted leading-relaxed">
               Nothing here changes how you already run your OPD. The lower lane
               is everything Sonara does; the upper lane is everything that stays
-              yours — including every decision.
+              yours, including every decision.
             </p>
           </div>
 
@@ -258,12 +258,12 @@ export default function LandingPage() {
               {
                 t: "00:04",
                 h: "You talk. It separates the voices.",
-                b: "History stays in the patient's words, findings stay in yours. Switch language mid-sentence — it follows without being told.",
+                b: "History stays in the patient's words, findings stay in yours. Switch language mid-sentence and it follows without being told.",
               },
               {
                 t: "06:12",
                 h: "You end it. The note is already forming.",
-                b: "Complaint, history, examination, assessment, plan — into the structure your practice already uses, with symptoms pulled out as tags.",
+                b: "Complaint, history, examination, assessment and plan, all in the structure your practice already uses, with symptoms pulled out as tags.",
               },
               {
                 t: "06:20",
@@ -285,7 +285,7 @@ export default function LandingPage() {
         </div>
       </section>
 
-      {/* ═══════════ BENTO — what it actually does ═══════════ */}
+      {/* ═══════════ BENTO: what it actually does ═══════════ */}
       <section className="py-28">
         <div className="max-w-[1180px] mx-auto px-6">
           <div className="max-w-[54ch] mb-11" data-reveal>
@@ -311,7 +311,7 @@ export default function LandingPage() {
               <BentoHead
                 eyebrow="Diarization"
                 title="Who said what"
-                body="History belongs to the patient. Findings belong to you. Mixing the two corrupts the record, so speaker attribution is measured, not assumed — and one tap fixes it if the labels land the wrong way round."
+                body="History belongs to the patient. Findings belong to you. Mixing the two corrupts the record, so speaker attribution is measured, not assumed, and one tap fixes it if the labels land the wrong way round."
               />
               <div className="mt-6">
                 <DiarizationGraphic />
@@ -322,7 +322,7 @@ export default function LandingPage() {
               <BentoHead
                 eyebrow="Traceability"
                 title="Every line has a source"
-                body="Hover any sentence in the note and the seconds of conversation that produced it light up. If you can't see where a line came from, you can't check it — so we always show you."
+                body="Hover any sentence in the note and the seconds of conversation that produced it light up. If you can't see where a line came from, you can't check it, so we always show you."
               />
               <div className="mt-6">
                 <ProvenanceGraphic />
@@ -344,7 +344,7 @@ export default function LandingPage() {
               <BentoHead
                 eyebrow="Indian drug names"
                 title="Brands as they're actually said"
-                body="Dolo, Telma, Azithral, Thyronorm — resolved to salt, strength and form, and matched against the allergies on file before anything is printed."
+                body="Dolo, Telma, Azithral, Thyronorm, all resolved to salt, strength and form, and matched against the allergies on file before anything is printed."
               />
               <div className="mt-6 flex flex-wrap gap-1.5">
                 {[
@@ -377,7 +377,7 @@ export default function LandingPage() {
                 <div className="t-label text-amber-text mb-1">On examination</div>
                 <p className="text-[14px] m-0 leading-snug">
                   Throat congested. Tympanic membranes normal. Chest
-                  auscultation limited —{" "}
+                  auscultation limited:{" "}
                   <span className="bg-chalk px-1 rounded-[4px]">
                     child crying, audio unclear here
                   </span>
@@ -396,7 +396,7 @@ export default function LandingPage() {
                 {[
                   { l: "Asked in Marathi · verbal · 11:21", ok: true },
                   { l: "Applies to this visit only", ok: true },
-                  { l: "Withdrawable mid-visit — audio deleted in 24h", ok: true },
+                  { l: "Withdrawable mid-visit, audio deleted in 24h", ok: true },
                   { l: "Remembered for next time", ok: false },
                 ].map((r) => (
                   <div key={r.l} className="flex items-center gap-2.5 text-[13.5px]">
@@ -433,7 +433,7 @@ export default function LandingPage() {
             </h2>
             <p className="text-[17px] text-ink-muted leading-relaxed max-w-[48ch]">
               Consultations here aren't in one language. They're in one and a
-              half, and the switch happens mid-sentence — which is exactly where
+              half, and the switch happens mid-sentence, which is exactly where
               a tool tuned on a quiet American exam room gives up. A global
               competitor can't ship this quickly, and a local one can't build it
               quickly.
@@ -500,7 +500,7 @@ export default function LandingPage() {
         </div>
       </section>
 
-      {/* ═══════════ THE LINE — safety ═══════════ */}
+      {/* ═══════════ THE LINE: safety ═══════════ */}
       <section id="line" className="py-28">
         <div className="max-w-[1180px] mx-auto px-6">
           <div className="max-w-[52ch] mb-12" data-reveal>
@@ -509,7 +509,7 @@ export default function LandingPage() {
               Sonara drafts. <em className="not-italic text-sea">You are the only one who prescribes.</em>
             </h2>
             <p className="text-[17px] text-muted leading-relaxed">
-              This isn't a disclaimer at the bottom of a page — it's how the
+              This isn't a disclaimer at the bottom of a page. It's how the
               database is built. A prescription starts unsigned and cannot
               become signed except through a doctor whose registration we have
               checked by hand.
@@ -533,12 +533,12 @@ export default function LandingPage() {
               {
                 icon: <IconLock size={17} />,
                 h: "The recording stays yours",
-                b: "Encrypted, reachable only through links that expire in minutes, purged on the schedule you set. Your patients' data never trains a model — ours or anyone's.",
+                b: "Encrypted, reachable only through links that expire in minutes, purged on the schedule you set. Your patients' data never trains a model, ours or anyone's.",
               },
               {
                 icon: <IconCheck size={17} />,
                 h: "Everything is on the record",
-                b: "Who consented, who recorded, who edited, who signed, what the content hashed to, and who so much as opened the file. Append-only — there is no delete.",
+                b: "Who consented, who recorded, who edited, who signed, what the content hashed to, and who so much as opened the file. Append-only, so there is no delete.",
               },
             ].map((c, i) => (
               <div
@@ -560,7 +560,7 @@ export default function LandingPage() {
         </div>
       </section>
 
-      {/* ═══════════ SCOPE — the honest list ═══════════ */}
+      {/* ═══════════ SCOPE: the honest list ═══════════ */}
       <section id="scope" className="py-24 bg-chalk border-y border-line">
         <div className="max-w-[1180px] mx-auto px-6 grid lg:grid-cols-[1fr_1.15fr] gap-14 items-start">
           <div data-reveal>

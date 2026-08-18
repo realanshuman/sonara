@@ -19,9 +19,9 @@ const plexMono = IBM_Plex_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Sonara — the consultation already contains the note",
+  title: "Sonara: the consultation already contains the note",
   description:
-    "Sonara listens to the visit, tells the voices apart, and writes the case sheet — you review and sign before the patient stands up. Built for Indian OPD practice.",
+    "Sonara listens to the visit, tells the voices apart, and writes the case sheet. You review and sign before the patient stands up. Built for Indian OPD practice.",
 };
 
 export default function RootLayout({

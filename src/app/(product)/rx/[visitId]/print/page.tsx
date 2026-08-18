@@ -10,7 +10,7 @@ import { drugById } from "@/lib/drugs";
 import { dateTimeStamp, patientCode, shortDate } from "@/lib/format";
 
 /**
- * FR-RX-6: the signed prescription as it reaches the pharmacy counter —
+ * FR-RX-6: the signed prescription as it reaches the pharmacy counter:
  * doctor name, qualifications, registration number, clinic address, date,
  * patient details. Rendered as a page a browser prints to PDF.
  */
@@ -146,10 +146,10 @@ export default function RxPrintPage({
                       {it.frequency}
                     </td>
                     <td className="py-2.5 align-top font-mono text-[13px]">
-                      {it.durationDays ? `${it.durationDays} days` : "—"}
+                      {it.durationDays ? `${it.durationDays} days` : "-"}
                     </td>
                     <td className="py-2.5 align-top text-[13.5px]">
-                      {it.instructions || "—"}
+                      {it.instructions || "-"}
                     </td>
                   </tr>
                 );

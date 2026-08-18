@@ -1,5 +1,5 @@
 /**
- * Domain types — mirrors the PRD §7 data model (Neon/Postgres) so the
+ * Domain types, mirroring the PRD §7 data model (Neon/Postgres) so the
  * client store can be swapped for real queries without renaming anything.
  */
 
@@ -136,7 +136,7 @@ export const NOTE_SECTIONS: { key: NoteSectionKey; label: string }[] = [
   { key: "presentingComplaint", label: "Presenting complaint" },
   { key: "history", label: "History" },
   { key: "examination", label: "On examination" },
-  { key: "assessment", label: "Assessment — draft" },
+  { key: "assessment", label: "Assessment (draft)" },
   { key: "plan", label: "Plan" },
 ];
 

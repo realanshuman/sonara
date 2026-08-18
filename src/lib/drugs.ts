@@ -1,12 +1,12 @@
 import type { Drug } from "./types";
 
 /**
- * Demo drug reference — a hand-picked slice of commonly prescribed Indian
+ * Demo drug reference: a hand-picked slice of commonly prescribed Indian
  * brands so the prescription builder and allergy check have something real
  * to resolve against.
  *
  * FR-RX-2 (PRD §6.8): production must licence a real Indian drug database.
- * This file is a stand-in for development only — it is deliberately small
+ * This file is a stand-in for development only. It is deliberately small
  * and deliberately not generated.
  */
 export const DRUGS: Drug[] = [
@@ -27,29 +27,29 @@ export const DRUGS: Drug[] = [
   { id: "d-montair", brand: "Montair LC", generic: "Montelukast + Levocetirizine", salt: "Montelukast 10mg + Levocetirizine 5mg", strength: "10/5mg", form: "tablet", schedule: "H" },
   { id: "d-allegra", brand: "Allegra 120", generic: "Fexofenadine", salt: "Fexofenadine", strength: "120mg", form: "tablet", schedule: "H" },
   { id: "d-cetzine", brand: "Cetzine 10", generic: "Cetirizine", salt: "Cetirizine", strength: "10mg", form: "tablet", schedule: "OTC" },
-  { id: "d-sinarest", brand: "Sinarest", generic: "Paracetamol + Phenylephrine + CPM", salt: "Paracetamol 500mg + Phenylephrine 10mg + Chlorpheniramine 2mg", strength: "—", form: "tablet", schedule: "OTC" },
+  { id: "d-sinarest", brand: "Sinarest", generic: "Paracetamol + Phenylephrine + CPM", salt: "Paracetamol 500mg + Phenylephrine 10mg + Chlorpheniramine 2mg", strength: "-", form: "tablet", schedule: "OTC" },
   { id: "d-otrivin", brand: "Otrivin 0.1%", generic: "Xylometazoline", salt: "Xylometazoline", strength: "0.1%", form: "nasal drops", schedule: "OTC" },
   { id: "d-ascoril", brand: "Ascoril LS", generic: "Ambroxol + Levosalbutamol + Guaifenesin", salt: "Ambroxol 30mg + Levosalbutamol 1mg + Guaifenesin 50mg", strength: "per 5ml", form: "syrup", schedule: "H" },
   { id: "d-grilinctus", brand: "Grilinctus", generic: "Dextromethorphan + CPM", salt: "Dextromethorphan 5mg + Chlorpheniramine 2.5mg", strength: "per 5ml", form: "syrup", schedule: "H" },
   { id: "d-betadine", brand: "Betadine Gargle", generic: "Povidone-iodine", salt: "Povidone-iodine 2%", strength: "2%", form: "gargle", schedule: "OTC" },
   { id: "d-electral", brand: "Electral", generic: "ORS", salt: "WHO oral rehydration salts", strength: "21.8g sachet", form: "powder", schedule: "OTC" },
   { id: "d-rantac", brand: "Rantac 150", generic: "Ranitidine", salt: "Ranitidine", strength: "150mg", form: "tablet", schedule: "H" },
-  { id: "d-zerodol", brand: "Zerodol SP", generic: "Aceclofenac + Serratiopeptidase + Paracetamol", salt: "Aceclofenac 100mg + Serratiopeptidase 15mg + Paracetamol 325mg", strength: "—", form: "tablet", schedule: "H", saltFamily: "nsaid" },
-  { id: "d-combiflam", brand: "Combiflam", generic: "Ibuprofen + Paracetamol", salt: "Ibuprofen 400mg + Paracetamol 325mg", strength: "—", form: "tablet", schedule: "OTC", saltFamily: "nsaid" },
+  { id: "d-zerodol", brand: "Zerodol SP", generic: "Aceclofenac + Serratiopeptidase + Paracetamol", salt: "Aceclofenac 100mg + Serratiopeptidase 15mg + Paracetamol 325mg", strength: "-", form: "tablet", schedule: "H", saltFamily: "nsaid" },
+  { id: "d-combiflam", brand: "Combiflam", generic: "Ibuprofen + Paracetamol", salt: "Ibuprofen 400mg + Paracetamol 325mg", strength: "-", form: "tablet", schedule: "OTC", saltFamily: "nsaid" },
   { id: "d-ibugesic", brand: "Ibugesic Plus", generic: "Ibuprofen + Paracetamol", salt: "Ibuprofen 100mg + Paracetamol 162.5mg", strength: "per 5ml", form: "syrup", schedule: "OTC", saltFamily: "nsaid" },
   { id: "d-shelcal", brand: "Shelcal 500", generic: "Calcium + Vitamin D3", salt: "Calcium carbonate 1250mg + Vit D3 250IU", strength: "500mg", form: "tablet", schedule: "OTC" },
-  { id: "d-becosules", brand: "Becosules", generic: "B-complex + Vitamin C", salt: "B-complex with Vitamin C", strength: "—", form: "capsule", schedule: "OTC" },
+  { id: "d-becosules", brand: "Becosules", generic: "B-complex + Vitamin C", salt: "B-complex with Vitamin C", strength: "-", form: "capsule", schedule: "OTC" },
   { id: "d-thyronorm", brand: "Thyronorm 50", generic: "Levothyroxine", salt: "Levothyroxine sodium", strength: "50mcg", form: "tablet", schedule: "H" },
   { id: "d-eltroxin", brand: "Eltroxin 25", generic: "Levothyroxine", salt: "Levothyroxine sodium", strength: "25mcg", form: "tablet", schedule: "H" },
   { id: "d-asthalin", brand: "Asthalin Inhaler", generic: "Salbutamol", salt: "Salbutamol 100mcg/dose", strength: "100mcg", form: "inhaler", schedule: "H" },
   { id: "d-budecort", brand: "Budecort 200", generic: "Budesonide", salt: "Budesonide 200mcg/dose", strength: "200mcg", form: "inhaler", schedule: "H" },
-  { id: "d-deriphyllin", brand: "Deriphyllin", generic: "Etofylline + Theophylline", salt: "Etofylline 77mg + Theophylline 23mg", strength: "—", form: "tablet", schedule: "H" },
-  { id: "d-norflox", brand: "Norflox TZ", generic: "Norfloxacin + Tinidazole", salt: "Norfloxacin 400mg + Tinidazole 600mg", strength: "—", form: "tablet", schedule: "H", saltFamily: "fluoroquinolone" },
-  { id: "d-sporlac", brand: "Sporlac DS", generic: "Lactobacillus", salt: "Lactic acid bacillus 120M spores", strength: "—", form: "tablet", schedule: "OTC" },
-  { id: "d-cyclopam", brand: "Cyclopam", generic: "Dicyclomine + Paracetamol", salt: "Dicyclomine 20mg + Paracetamol 500mg", strength: "—", form: "tablet", schedule: "H" },
-  { id: "d-meftal", brand: "Meftal Spas", generic: "Mefenamic acid + Dicyclomine", salt: "Mefenamic acid 250mg + Dicyclomine 10mg", strength: "—", form: "tablet", schedule: "H", saltFamily: "nsaid" },
+  { id: "d-deriphyllin", brand: "Deriphyllin", generic: "Etofylline + Theophylline", salt: "Etofylline 77mg + Theophylline 23mg", strength: "-", form: "tablet", schedule: "H" },
+  { id: "d-norflox", brand: "Norflox TZ", generic: "Norfloxacin + Tinidazole", salt: "Norfloxacin 400mg + Tinidazole 600mg", strength: "-", form: "tablet", schedule: "H", saltFamily: "fluoroquinolone" },
+  { id: "d-sporlac", brand: "Sporlac DS", generic: "Lactobacillus", salt: "Lactic acid bacillus 120M spores", strength: "-", form: "tablet", schedule: "OTC" },
+  { id: "d-cyclopam", brand: "Cyclopam", generic: "Dicyclomine + Paracetamol", salt: "Dicyclomine 20mg + Paracetamol 500mg", strength: "-", form: "tablet", schedule: "H" },
+  { id: "d-meftal", brand: "Meftal Spas", generic: "Mefenamic acid + Dicyclomine", salt: "Mefenamic acid 250mg + Dicyclomine 10mg", strength: "-", form: "tablet", schedule: "H", saltFamily: "nsaid" },
   { id: "d-volini", brand: "Volini Gel", generic: "Diclofenac", salt: "Diclofenac diethylamine 1.16%", strength: "30g", form: "gel", schedule: "OTC", saltFamily: "nsaid" },
-  { id: "d-chymoral", brand: "Chymoral Forte", generic: "Trypsin + Chymotrypsin", salt: "Trypsin-chymotrypsin 100000 AU", strength: "—", form: "tablet", schedule: "H" },
+  { id: "d-chymoral", brand: "Chymoral Forte", generic: "Trypsin + Chymotrypsin", salt: "Trypsin-chymotrypsin 100000 AU", strength: "-", form: "tablet", schedule: "H" },
 ];
 
 export function searchDrugs(q: string, limit = 8): Drug[] {
@@ -76,7 +76,7 @@ export function drugById(id?: string): Drug | undefined {
 }
 
 /**
- * FR-RX-3 — blocking allergy check. Matches a drug (or free text) against
+ * FR-RX-3, the blocking allergy check. Matches a drug (or free text) against
  * the patient's recorded allergy labels via salt families and substrings.
  */
 export function allergyConflict(

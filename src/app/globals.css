@@ -1,7 +1,7 @@
 @import "tailwindcss";
 
 /* ═══════════════════════════════════════════════════════════════
-   Sonara design tokens — derived from the brand kit (v1, Aug 2026)
+   Sonara design tokens, derived from the brand kit (v1, Aug 2026)
 
    Palette rules that matter:
    · Petrol carries the brand. Buttons, the mark, primary actions.
@@ -33,7 +33,7 @@
   --color-ink-muted: #8fa8a3;
   --color-ink-faint: #6e8c87;
 
-  /* functional tints — fills behind small text */
+  /* functional tints: fills behind small text */
   --color-tint-petrol: #e0ede9;
   --color-tint-sea: #eaf3f0;
   --color-tint-mist: #e7eeeb;
@@ -57,7 +57,7 @@
   --radius-field: 9px;
   --radius-chip: 6px;
 
-  /* shadows — one soft lift, used sparingly */
+  /* shadows: one soft lift, used sparingly */
   --shadow-lift: 0 1px 2px rgba(11, 36, 34, 0.04), 0 18px 44px -28px rgba(11, 36, 34, 0.3);
   --shadow-pop: 0 4px 10px rgba(11, 36, 34, 0.06), 0 24px 60px -24px rgba(11, 36, 34, 0.35);
 }

@@ -31,7 +31,7 @@ export default function PatientsPage() {
   const [tagFilter, setTagFilter] = useState("");
   const [addOpen, setAddOpen] = useState(false);
 
-  /** every symptom tag seen in signed notes — FR-PAT-5 */
+  /** every symptom tag seen in signed notes (FR-PAT-5) */
   const allTags = useMemo(() => {
     const counts = new Map<string, number>();
     for (const list of Object.values(state.tags)) {
@@ -93,7 +93,7 @@ export default function PatientsPage() {
             <Input
               value={q}
               onChange={(e) => setQ(e.target.value)}
-              placeholder="Name or phone — typos are fine"
+              placeholder="Name or phone · typos are fine"
               className="pl-9 w-[260px] py-[8px] text-[14px]"
               aria-label="Search patients"
             />
@@ -152,7 +152,7 @@ export default function PatientsPage() {
             </Button>
           }
         >
-          No patient matches that search. The search is forgiving — try fewer
+          No patient matches that search. The search is forgiving, so try fewer
           letters, or the last four digits of a phone number.
         </EmptyState>
       ) : (
@@ -322,7 +322,7 @@ function NewPatientModal({
             >
               Open that record
             </Link>{" "}
-            instead — records are never merged automatically.
+            instead. Records are never merged automatically.
           </div>
         )}
 

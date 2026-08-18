@@ -65,7 +65,7 @@ export function EmptyState({
   );
 }
 
-/** Definition row — patient demographics, signature blocks, settings. */
+/** Definition row: patient demographics, signature blocks, settings. */
 export function KV({
   k,
   children,
@@ -114,7 +114,7 @@ export function Kbd({ children }: { children: ReactNode }) {
   );
 }
 
-/** Inline banner — the honest, plain-language state the PRD asks for. */
+/** Inline banner: the honest, plain-language state the PRD asks for. */
 export function Banner({
   tone = "warn",
   icon,

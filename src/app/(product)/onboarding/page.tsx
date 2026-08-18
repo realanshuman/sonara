@@ -94,7 +94,7 @@ export default function OnboardingPage() {
         {step === "account" && (
           <StepCard
             title="Create your account"
-            lede="One email per doctor. A 6-digit code confirms it — no password links to lose."
+            lede="One email per doctor. A 6-digit code confirms it, with no password links to lose."
           >
             <Field label="Work email">
               <Input
@@ -130,7 +130,7 @@ export default function OnboardingPage() {
         {step === "clinic" && (
           <StepCard
             title="Where do you practise?"
-            lede="This is what prints on every prescription, so it's worth getting right — you can edit it later in Settings."
+            lede="This is what prints on every prescription, so it's worth getting right. You can edit it later in Settings."
           >
             <Field label="Clinic name">
               <Input
@@ -158,7 +158,7 @@ export default function OnboardingPage() {
         {step === "registration" && (
           <StepCard
             title="Your council registration"
-            lede="Only a registered practitioner may prescribe. We check the certificate by hand — a person, within 24 hours — because this gate is the basis of everything else."
+            lede="Only a registered practitioner may prescribe. We check the certificate by hand, a person within 24 hours, because this gate is the basis of everything else."
           >
             <Field label="Registration number">
               <Input
@@ -219,7 +219,7 @@ export default function OnboardingPage() {
         {step === "done" && (
           <StepCard
             title="You're set up"
-            lede="Your clinic exists and is yours alone — no other clinic can see a single row of it."
+            lede="Your clinic exists and is yours alone. No other clinic can see a single row of it."
           >
             <div className="space-y-2.5">
               <StatusRow
@@ -238,7 +238,7 @@ export default function OnboardingPage() {
                 icon={<IconClock size={14} />}
                 tone="wait"
                 label="Registration under review"
-                detail={`${regNo || "—"} · ${council} · signing unlocks on approval`}
+                detail={`${regNo || "not entered"} · ${council} · signing unlocks on approval`}
               />
               <StatusRow
                 icon={<IconUser size={14} />}

@@ -354,7 +354,7 @@ export function buildSeed(): SeedData {
       presentingComplaint: "Fever and body ache for 2 days.",
       history: "Low-grade fever ×2 days with generalised body ache. No cough. Family members recently unwell.",
       examination: "Temp 99.6°F. Throat mildly congested. Chest clear.",
-      assessment: "Viral fever — draft.",
+      assessment: "Viral fever (draft).",
       plan: "Symptomatic treatment, hydration. Review if fever persists beyond 3 days.",
     },
     tagList: [
@@ -374,7 +374,7 @@ export function buildSeed(): SeedData {
       presentingComplaint: "Burning epigastric discomfort after meals, 1 week.",
       history: "Post-prandial burning ×1 week, worse with spicy food and late dinners. No vomiting, no black stools. Tea 5–6 cups/day.",
       examination: "Abdomen soft, mild epigastric tenderness. No guarding.",
-      assessment: "Gastritis, likely dietary — draft.",
+      assessment: "Gastritis, likely dietary (draft).",
       plan: "PPI for 2 weeks, meal-timing advice, reduce tea. Report immediately if black stools or vomiting.",
     },
     tagList: [
@@ -393,7 +393,7 @@ export function buildSeed(): SeedData {
       presentingComplaint: "Routine follow-up, knee stiffness in the mornings.",
       history: "Morning stiffness ~15 minutes, improves with movement. Taking calcium regularly. Walks 20 minutes daily.",
       examination: "Mild crepitus both knees. No effusion. Gait steady.",
-      assessment: "Osteoporosis with early degenerative knee changes — stable.",
+      assessment: "Osteoporosis with early degenerative knee changes, stable.",
       plan: "Continue calcium + D3. Quadriceps exercises demonstrated. Review in 3 months.",
     },
     rx: [
@@ -407,8 +407,8 @@ export function buildSeed(): SeedData {
     sections: {
       presentingComplaint: "Quarterly diabetes review. No new complaints.",
       history: "Adherent to metformin and telmisartan+HCTZ. Fasting sugars at home 110–126. Walks daily. No hypoglycaemic episodes, no visual complaints, no foot symptoms.",
-      examination: "BP 132/84. Weight 71 kg (stable). Foot examination — pulses present, sensation intact, no lesions.",
-      assessment: "Type 2 diabetes with hypertension — acceptable control.",
+      examination: "BP 132/84. Weight 71 kg (stable). Foot examination: pulses present, sensation intact, no lesions.",
+      assessment: "Type 2 diabetes with hypertension, acceptable control.",
       plan: "Continue current medication. HbA1c and renal profile before next visit. Annual eye check reminded. Review in 3 months.",
     },
     tagList: [
@@ -419,7 +419,7 @@ export function buildSeed(): SeedData {
     rx: [
       { drugId: "d-glycomet", strength: "500mg", form: "tablet", frequency: "1-0-1", durationDays: 90, instructions: "With meals" },
       { drugId: "d-telma-h", strength: "40/12.5mg", form: "tablet", frequency: "1-0-0", durationDays: 90 },
-      { drugId: "d-becosules", strength: "—", form: "capsule", frequency: "1-0-0", durationDays: 30 },
+      { drugId: "d-becosules", strength: "-", form: "capsule", frequency: "1-0-0", durationDays: 30 },
     ],
     deliver: ["whatsapp"], isToday: true,
   });
@@ -430,7 +430,7 @@ export function buildSeed(): SeedData {
       presentingComplaint: "Thyroid review with recent reports.",
       history: "TSH 3.1 on current dose (report 14 Aug). Energy levels good, weight stable. Taking dose on empty stomach as advised.",
       examination: "Pulse 74. No tremor. Thyroid not palpably enlarged.",
-      assessment: "Hypothyroidism — euthyroid on current replacement.",
+      assessment: "Hypothyroidism, euthyroid on current replacement.",
       plan: "Continue Thyronorm 50mcg. Repeat TSH in 6 months, earlier if symptoms.",
     },
     rx: [
@@ -447,7 +447,7 @@ export function buildSeed(): SeedData {
       presentingComplaint: "Facial heaviness and thick nasal discharge, 5 days.",
       history: "Purulent nasal discharge, facial pressure worse on bending, low-grade fever. Second episode this year.",
       examination: "Maxillary tenderness both sides. Post-nasal drip present. Temp 99.8°F.",
-      assessment: "Acute bacterial sinusitis — draft.",
+      assessment: "Acute bacterial sinusitis (draft).",
       plan: "Antibiotic course, steam inhalation, saline rinses. Review in 5 days.",
     },
     tagList: [
@@ -466,7 +466,7 @@ export function buildSeed(): SeedData {
       presentingComplaint: "Routine check before travel.",
       history: "No complaints. Sleep and appetite normal.",
       examination: "BP 118/76. Hb 11.9 (report seen). General examination normal.",
-      assessment: "Routine check — normal.",
+      assessment: "Routine check, normal.",
       plan: "No medication. Continue as usual.",
     },
     rx: [],
@@ -478,7 +478,7 @@ export function buildSeed(): SeedData {
       presentingComplaint: "BP review.",
       history: "On telmisartan 40mg. Reports good adherence this period. Occasional evening headaches.",
       examination: "BP 138/88. Pulse 76 regular. Chest clear.",
-      assessment: "Hypertension — borderline control.",
+      assessment: "Hypertension, borderline control.",
       plan: "Continue same dose. Home BP diary twice a week. Review in 8 weeks.",
     },
     rx: [
@@ -493,7 +493,7 @@ export function buildSeed(): SeedData {
       presentingComplaint: "Hypertension follow-up.",
       history: "Doses regular. No headaches this period.",
       examination: "BP 134/86. No oedema.",
-      assessment: "Hypertension — adequate control.",
+      assessment: "Hypertension, adequate control.",
       plan: "Continue telmisartan 40mg. Salt restriction reinforced.",
     },
     rx: [
@@ -507,7 +507,7 @@ export function buildSeed(): SeedData {
       presentingComplaint: "Quarterly diabetes review.",
       history: "HbA1c 7.2% (May). Adherent. One episode of evening giddiness, resolved with food.",
       examination: "BP 130/82. Weight 71.4 kg.",
-      assessment: "Type 2 diabetes — stable.",
+      assessment: "Type 2 diabetes, stable.",
       plan: "Continue metformin. Discussed evening snack timing.",
     },
     rx: [
@@ -522,7 +522,7 @@ export function buildSeed(): SeedData {
       presentingComplaint: "Diabetes review.",
       history: "Fasting sugars 105–130 at home.",
       examination: "BP 134/86. Foot check normal.",
-      assessment: "Type 2 diabetes — stable.",
+      assessment: "Type 2 diabetes, stable.",
       plan: "Continue current medication.",
     },
     rx: [
@@ -536,12 +536,12 @@ export function buildSeed(): SeedData {
       presentingComplaint: "Increased breathlessness on stairs, 1 week.",
       history: "COPD, ex-smoker. Breathless after one flight of stairs, no fever, no chest pain. Using Deriphyllin as prescribed.",
       examination: "Scattered rhonchi. SpO2 94% room air. No pedal oedema.",
-      assessment: "COPD — mild exacerbation, draft.",
+      assessment: "COPD, mild exacerbation (draft).",
       plan: "Bronchodilator inhaler added. Breathing exercises. Return immediately if breathless at rest.",
     },
     rx: [
       { drugId: "d-asthalin", strength: "100mcg", form: "inhaler", frequency: "SOS", durationDays: null, instructions: "2 puffs when breathless, max 4×/day" },
-      { drugId: "d-deriphyllin", strength: "—", form: "tablet", frequency: "1-0-1", durationDays: 30 },
+      { drugId: "d-deriphyllin", strength: "-", form: "tablet", frequency: "1-0-1", durationDays: 30 },
     ],
     deliver: ["print"],
   });
@@ -552,7 +552,7 @@ export function buildSeed(): SeedData {
       presentingComplaint: "Right knee pain after standing long hours.",
       history: "Pain after prolonged standing, relieved by rest. No locking or giving way.",
       examination: "Crepitus right knee, medial joint-line tenderness. No effusion.",
-      assessment: "Osteoarthritis flare — right knee.",
+      assessment: "Osteoarthritis flare, right knee.",
       plan: "Topical analgesic, quadriceps strengthening, weight counselling. Review in 6 weeks.",
     },
     rx: [
@@ -565,9 +565,9 @@ export function buildSeed(): SeedData {
     id: "v-meera-apr", patientId: "p-meera", at: daysAgo(120, "11:00"), durationMin: 5, language: "mr",
     sections: {
       presentingComplaint: "Thyroid review.",
-      history: "TSH 4.8 — dose adjusted last visit. Mild fatigue improving.",
+      history: "TSH 4.8, dose adjusted last visit. Mild fatigue improving.",
       examination: "Pulse 72. Weight stable.",
-      assessment: "Hypothyroidism — improving on adjusted dose.",
+      assessment: "Hypothyroidism, improving on adjusted dose.",
       plan: "Repeat TSH in 3 months.",
     },
     rx: [
@@ -575,7 +575,7 @@ export function buildSeed(): SeedData {
     ],
   });
 
-  // front-desk activity in the audit log (reads are logged — FR-AUD-5)
+  // front-desk activity in the audit log (reads are logged, FR-AUD-5)
   audit(auditLog, todayAt("10:01"), FRONT_DESK, "patient.checked_in", "appointment", "a-01", { patientId: "p-anita" });
   audit(auditLog, todayAt("10:14"), FRONT_DESK, "patient.checked_in", "appointment", "a-02", { patientId: "p-vikram" });
   audit(auditLog, todayAt("10:29"), FRONT_DESK, "patient.checked_in", "appointment", "a-03", { patientId: "p-sushila" });
@@ -585,7 +585,7 @@ export function buildSeed(): SeedData {
   audit(auditLog, todayAt("11:32"), FRONT_DESK, "patient.checked_in", "appointment", "a-08", { patientId: "p-rakesh" });
   audit(auditLog, todayAt("11:58"), FRONT_DESK, "patient.checked_in", "appointment", "a-10", { patientId: "p-arjun" });
   audit(auditLog, todayAt("10:36"), FRONT_DESK, "appointment.marked_no_show", "appointment", "a-04", { patientId: "p-dinesh" });
-  audit(auditLog, todayAt("10:48"), FRONT_DESK, "patient.record_viewed", "patient", "p-ramanathan", { patientId: "p-ramanathan", metadata: { fields: "demographics only — role: front_desk" } });
+  audit(auditLog, todayAt("10:48"), FRONT_DESK, "patient.record_viewed", "patient", "p-ramanathan", { patientId: "p-ramanathan", metadata: { fields: "demographics only, role: front_desk" } });
 
   auditLog.sort((a, b) => a.at.localeCompare(b.at));
   auditLog.forEach((e, i) => (e.id = i + 1));

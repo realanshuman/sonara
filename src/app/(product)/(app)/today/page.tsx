@@ -153,7 +153,7 @@ export default function TodayPage() {
           }
         >
           {query
-            ? `Nothing in today's list for "${query}". Try fewer letters — the search is forgiving.`
+            ? `Nothing in today's list for "${query}". Try fewer letters, the search is forgiving.`
             : "Add a walk-in patient, or import an appointment book from Settings."}
         </EmptyState>
       ) : (
@@ -275,7 +275,7 @@ export default function TodayPage() {
 
       {!isClinical && (
         <p className="t-mono-sm text-muted mt-4 leading-relaxed">
-          Front-desk view — clinical flags, notes and recordings are not
+          Front-desk view. Clinical flags, notes and recordings are not
           available to this role. Every record access is logged.
         </p>
       )}
@@ -293,7 +293,7 @@ export default function TodayPage() {
           setWalkInOpen(false);
           toast(
             dup
-              ? `Added — heads up, ${dup.fullName} has the same phone`
+              ? `Added. Heads up, ${dup.fullName} has the same phone`
               : `${fields.fullName} added to the queue`,
             dup ? "warn" : "ok",
           );
@@ -308,7 +308,7 @@ export default function TodayPage() {
   );
 }
 
-/* FR-APPT-2: name + age + sex + phone only — addable in under 15 seconds. */
+/* FR-APPT-2: name + age + sex + phone only, addable in under 15 seconds. */
 function WalkInModal({
   open,
   onClose,
@@ -392,7 +392,7 @@ function WalkInModal({
         </div>
         <Field
           label="Phone"
-          hint="These four fields are all that's required — everything else can wait."
+          hint="These four fields are all that's required. Everything else can wait."
         >
           <Input
             value={phone}

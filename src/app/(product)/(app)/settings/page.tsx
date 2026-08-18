@@ -128,8 +128,8 @@ export default function SettingsPage() {
           })}
           <p className="t-mono-sm text-muted leading-relaxed m-0">
             Registration certificates are checked by a human within 24 hours.
-            Until then a doctor can record and draft, but signing stays locked —
-            that gate is enforced in the API, not just here.
+            Until then a doctor can record and draft, but signing stays locked,
+            and that gate is enforced in the API, not just here.
           </p>
         </PanelBody>
       </Panel>
@@ -139,7 +139,7 @@ export default function SettingsPage() {
         <PanelHeader title="Audio retention" meta="purge runs daily" />
         <PanelBody className="space-y-3.5">
           <Banner tone="info">
-            Audio is not the medical record — the signed note is. That's why
+            Audio is not the medical record. The signed note is. That's why
             recordings can be purged on a schedule while notes are kept for the
             statutory period.
           </Banner>
@@ -177,7 +177,7 @@ export default function SettingsPage() {
         <PanelBody className="space-y-3">
           <p className="text-[13.5px] text-muted m-0 leading-relaxed">
             Brand names, local place names and the words your patients actually
-            use. These boost recognition for this clinic only — corrections
+            use. These boost recognition for this clinic only, and corrections
             never leave your account and never train a shared model.
           </p>
           <div className="flex flex-wrap gap-1.5">
@@ -210,7 +210,7 @@ export default function SettingsPage() {
             <Input
               value={vocab}
               onChange={(e) => setVocab(e.target.value)}
-              placeholder="Add a term — e.g. Koparkhairane, Zerodol"
+              placeholder="Add a term, e.g. Koparkhairane, Zerodol"
               className="max-w-[320px] py-[8px] text-[14px]"
             />
             <Button size="sm" type="submit">

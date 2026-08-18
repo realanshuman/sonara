@@ -123,7 +123,7 @@ export default function AuditPage() {
 
       {rows.length === 0 ? (
         <EmptyState icon={<IconAudit size={34} />} title="Nothing matches">
-          Try a different filter. Entries are never removed — if it happened,
+          Try a different filter. Entries are never removed, so if it happened,
           it's here.
         </EmptyState>
       ) : (
@@ -198,8 +198,8 @@ export default function AuditPage() {
       <p className="t-mono-sm text-muted mt-4 flex items-start gap-2 leading-relaxed max-w-[70ch]">
         <IconLock size={13} className="mt-[2px] shrink-0" />
         <span>
-          This log is written by a database role with INSERT permission only —
-          there is no update or delete path, in the API or the UI. Record
+          This log is written by a database role that can INSERT but never
+          UPDATE or DELETE, and no such path exists in the API or the UI. Record
           access is logged as well as changes, so a front-desk account probing
           clinical data shows up here.
         </span>

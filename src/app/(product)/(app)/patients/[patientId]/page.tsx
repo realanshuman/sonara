@@ -94,7 +94,7 @@ export default function PatientPage({
     a.download = `${patientCode(patient.id)}-record.json`;
     a.click();
     URL.revokeObjectURL(url);
-    toast("Record exported — the export is logged");
+    toast("Record exported. The export is logged");
   };
 
   return (
@@ -265,7 +265,7 @@ export default function PatientPage({
               <PanelBody className="space-y-3.5">
                 <FlagGroup
                   title="Allergies"
-                  empty="None recorded — checks still run on every prescription."
+                  empty="None recorded. Checks still run on every prescription."
                   items={flags.allergies.map((f) => (
                     <FlagRow
                       key={f.id}
@@ -343,7 +343,7 @@ export default function PatientPage({
         }}
       />
 
-      {/* FR-PAT-7 — erasure with retention */}
+      {/* FR-PAT-7: erasure with retention */}
       <Modal
         open={deleteOpen}
         onClose={() => setDeleteOpen(false)}
@@ -361,7 +361,7 @@ export default function PatientPage({
             <div className="px-3.5 py-2.5">
               <Pill tone="ok">retained</Pill>
               <span className="ml-2">
-                Signed notes and prescriptions — required by medical-records
+                Signed notes and prescriptions, required by medical-records
                 law, held for the statutory period
               </span>
             </div>
@@ -381,7 +381,7 @@ export default function PatientPage({
               onClick={() => {
                 actions.deletePatient(patient.id);
                 setDeleteOpen(false);
-                toast("Record erased — retention rules applied and logged", "warn");
+                toast("Record erased. Retention rules applied and logged", "warn");
                 router.push("/patients");
               }}
             >
@@ -445,7 +445,7 @@ function FlagRow({
   );
 }
 
-/* FR-PAT-2: allergies are structured — substance + reaction + severity. */
+/* FR-PAT-2: allergies are structured: substance + reaction + severity. */
 function AddFlagModal({
   open,
   onClose,
@@ -496,7 +496,7 @@ function AddFlagModal({
           label={kind === "allergy" ? "Drug or substance" : "Label"}
           hint={
             kind === "allergy"
-              ? "Named substances are matched against every prescription — including by drug family."
+              ? "Named substances are matched against every prescription, including by drug family."
               : undefined
           }
         >

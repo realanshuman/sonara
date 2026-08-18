@@ -1,7 +1,7 @@
 import type { SVGProps } from "react";
 
 /**
- * Sonara icon set — drawn to match the mark: 24-grid, stroked at 1.8,
+ * Sonara icon set, drawn to match the mark: 24-grid, stroked at 1.8,
  * round caps and joins. Icons inherit currentColor.
  */
 function base(props: SVGProps<SVGSVGElement> & { size?: number }) {
